@@ -1,0 +1,38 @@
+[
+  {
+    "kind": "preference",
+    "text": "User prefers clean dishes placed on the left side of the counter.",
+    "metadata": {
+      "task": "dish_cleanup"
+    }
+  },
+  {
+    "kind": "strategy",
+    "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+    "metadata": {
+      "task": "dish_cleanup"
+    }
+  },
+  {
+    "kind": "failure",
+    "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+    "metadata": {
+      "task": "dish_cleanup"
+    }
+  },
+  {
+    "kind": "episode_decision",
+    "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+    "metadata": {
+      "scene": {
+        "task_context": "dish_cleanup",
+        "user_done_eating": true,
+        "dirty_dishes_visible": true,
+        "clean_counter_left_available": true,
+        "robot_state": "idle",
+        "last_action_result": "none"
+      },
+      "confidence": 0.95
+    }
+  }
+]
