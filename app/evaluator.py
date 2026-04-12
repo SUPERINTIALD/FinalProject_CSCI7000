@@ -72,9 +72,24 @@ def _valid_target(scene_state: dict[str, Any], action: SemanticAction) -> tuple[
         if not action.target_object:
             notes.append("pick action missing target_object")
             return False, notes
-        if action.target_object not in object_names:
+
+        matching_obj = None
+        for obj in scene_state.get("objects", []):
+            if obj.get("name") == action.target_object:
+                matching_obj = obj
+                break
+
+        if matching_obj is None:
             notes.append(f"pick target_object '{action.target_object}' not present in scene")
             return False, notes
+
+        if matching_obj.get("state") not in ACTIONABLE_STATES:
+            notes.append(
+                f"pick target_object '{action.target_object}' is not actionable "
+                f"(state={matching_obj.get('state')})"
+            )
+            return False, notes
+
         return True, notes
 
     if action.action_type == "place":

@@ -41,20 +41,32 @@ def main() -> None:
 
     for scenario in scenarios:
         print(f"\n[scenario] {scenario.scenario_id}", flush=True)
+        from app.evaluator import get_valid_action_types
+
+        allowed_actions = get_valid_action_types(
+            scenario.scene_state,
+            scenario.template_name,
+        )
 
         planner_output = planner.choose_action(
             scene_state=scenario.scene_state,
-            allowed_actions=[
-                "wait",
-                "start_task",
-                "pick",
-                "place",
-                "clean_surface",
-                "inspect",
-            ],
+            allowed_actions=allowed_actions,
             memory_query=scenario.memory_query,
             use_memory=True,
         )
+        # planner_output = planner.choose_action(
+        #     scene_state=scenario.scene_state,
+        #     allowed_actions=[
+        #         "wait",
+        #         "start_task",
+        #         "pick",
+        #         "place",
+        #         "clean_surface",
+        #         "inspect",
+        #     ],
+        #     memory_query=scenario.memory_query,
+        #     use_memory=True,
+        # )
         print("\n[planner output]")
         print(json.dumps(planner_output, indent=2))
 
