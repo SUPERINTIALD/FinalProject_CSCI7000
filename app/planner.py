@@ -76,8 +76,9 @@ RELEVANT MEMORY:
         scene_state: dict[str, Any],
         allowed_actions: list[str],
         memory_query: str,
+        use_memory: bool = True,
     ) -> dict[str, Any]:
-        relevant_memory = self.memory.search(memory_query, limit=5)
+        relevant_memory = self.memory.search(memory_query, limit=5) if use_memory else []
 
         user_prompt = self._build_user_prompt(
             scene_state=scene_state,
@@ -91,4 +92,7 @@ RELEVANT MEMORY:
             temperature=0.1,
         )
 
-        return self._safe_parse(raw, allowed_actions)
+        result = self._safe_parse(raw, allowed_actions)
+        result["used_memory"] = use_memory
+        result["retrieved_memory"] = relevant_memory
+        return result

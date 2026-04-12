@@ -34,5 +34,441 @@
       },
       "confidence": 0.95
     }
+  },
+  {
+    "kind": "episode_decision",
+    "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+    "metadata": {
+      "scene": {
+        "task_context": "dish_cleanup",
+        "user_done_eating": true,
+        "dirty_dishes_visible": true,
+        "clean_counter_left_available": true,
+        "robot_state": "idle",
+        "last_action_result": "none"
+      },
+      "confidence": 0.0
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='proactive cleanup trigger' | Predicted='start_cleanup' | Expected='start_cleanup' | Correct=True",
+    "metadata": {
+      "scenario": "proactive cleanup trigger",
+      "expected_action": "start_cleanup",
+      "predicted_action": "start_cleanup",
+      "correct": true,
+      "confidence": 0.0,
+      "reason": "Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+      "memory_used": [
+        "strategy: start from right side first"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.95
+          }
+        },
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.0
+          }
+        },
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.\",\n  \"memory_used\": [\"strategy: start from right side first\"]\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='user still eating' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "user still eating",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+      "memory_used": [
+        "strategy: start from right side first"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.95
+          }
+        },
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.0
+          }
+        },
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.\",\n  \"memory_used\": [\"strategy: start from right side first\"]\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='already cleaning, next pick' | Predicted='start_cleanup' | Expected='pick_dish_right_side' | Correct=False",
+    "metadata": {
+      "scenario": "already cleaning, next pick",
+      "expected_action": "pick_dish_right_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+      "memory_used": [
+        "Strategy: start from right side first; user prefers clean dishes on left"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.95
+          }
+        },
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.0
+          }
+        },
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.\",\n  \"memory_used\": [\"Strategy: start from right side first; user prefers clean dishes on left\"]\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='nothing to clean' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "nothing to clean",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+      "memory_used": [
+        "episode_decision: start_cleanup",
+        "strategy: clean counter from right side"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.95
+          }
+        },
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.0
+          }
+        },
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.\",\n  \"memory_used\": [\"episode_decision: start_cleanup\", \"strategy: clean counter from right side\"]\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='object already in hand, place by preference' | Predicted='start_cleanup' | Expected='place_clean_left_side' | Correct=False",
+    "metadata": {
+      "scenario": "object already in hand, place by preference",
+      "expected_action": "place_clean_left_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+      "memory_used": [
+        "strategy: start from right side first"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.95
+          }
+        },
+        {
+          "kind": "episode_decision",
+          "text": "Scene led to action 'start_cleanup' because: Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.",
+          "metadata": {
+            "scene": {
+              "task_context": "dish_cleanup",
+              "user_done_eating": true,
+              "dirty_dishes_visible": true,
+              "clean_counter_left_available": true,
+              "robot_state": "idle",
+              "last_action_result": "none"
+            },
+            "confidence": 0.0
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the cleanup sequence to follow the strategy of starting from the right side first, then move left.\",\n  \"memory_used\": [\"strategy: start from right side first\"]\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='proactive cleanup trigger' | Predicted='start_cleanup' | Expected='start_cleanup' | Correct=True",
+    "metadata": {
+      "scenario": "proactive cleanup trigger",
+      "expected_action": "start_cleanup",
+      "predicted_action": "start_cleanup",
+      "correct": true,
+      "confidence": 0.95,
+      "reason": "Start the robot to perform dish cleanup as per task context.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the robot to perform dish cleanup as per task context.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='user still eating' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "user still eating",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Start the robot to begin cleaning the dishes visible on the counter.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the robot to begin cleaning the dishes visible on the counter.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='already cleaning, next pick' | Predicted='start_cleanup' | Expected='pick_dish_right_side' | Correct=False",
+    "metadata": {
+      "scenario": "already cleaning, next pick",
+      "expected_action": "pick_dish_right_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 1.0,
+      "reason": "Initiate the full cleanup sequence to remove all dirty dishes from the counter.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Initiate the full cleanup sequence to remove all dirty dishes from the counter.\",\n  \"memory_used\": [],\n  \"confidence\": 1.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='nothing to clean' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "nothing to clean",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Initiate the cleaning process to remove dirty dishes from the counter.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Initiate the cleaning process to remove dirty dishes from the counter.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='object already in hand, place by preference' | Predicted='start_cleanup' | Expected='place_clean_left_side' | Correct=False",
+    "metadata": {
+      "scenario": "object already in hand, place by preference",
+      "expected_action": "place_clean_left_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Select start action to begin the cleanup sequence.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Select start action to begin the cleanup sequence.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
+    }
   }
 ]
