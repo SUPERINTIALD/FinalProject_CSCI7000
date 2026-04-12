@@ -125,7 +125,6 @@ def build_scenarios() -> list[Scenario]:
         ),
     ]
 
-
 def run_pass(
     planner: Planner,
     scenarios: list[Scenario],
@@ -138,9 +137,11 @@ def run_pass(
     for idx, scenario in enumerate(scenarios, start=1):
         print(f"\n[{idx}] {scenario.name}", flush=True)
 
+        allowed_actions = get_allowed_actions(scenario.scene_state)
+
         decision = planner.choose_action(
             scene_state=scenario.scene_state,
-            allowed_actions=scenario.allowed_actions,
+            allowed_actions=allowed_actions,
             memory_query=scenario.memory_query,
             use_memory=use_memory,
         )
@@ -149,6 +150,7 @@ def run_pass(
 
         result = {
             "scenario": scenario.name,
+            "allowed_actions": allowed_actions,
             "expected_action": scenario.expected_action,
             "predicted_action": decision["action"],
             "correct": correct,
@@ -164,6 +166,44 @@ def run_pass(
         print(json.dumps(result, indent=2), flush=True)
 
     return results
+# def run_pass(
+#     planner: Planner,
+#     scenarios: list[Scenario],
+#     use_memory: bool,
+# ) -> list[dict]:
+#     results = []
+
+#     print(f"\n=== Running scenarios | use_memory={use_memory} ===", flush=True)
+
+#     for idx, scenario in enumerate(scenarios, start=1):
+#         print(f"\n[{idx}] {scenario.name}", flush=True)
+
+#         decision = planner.choose_action(
+#             scene_state=scenario.scene_state,
+#             allowed_actions=scenario.allowed_actions,
+#             memory_query=scenario.memory_query,
+#             use_memory=use_memory,
+#         )
+
+#         correct = decision["action"] == scenario.expected_action
+
+#         result = {
+#             "scenario": scenario.name,
+#             "expected_action": scenario.expected_action,
+#             "predicted_action": decision["action"],
+#             "correct": correct,
+#             "confidence": decision["confidence"],
+#             "reason": decision["reason"],
+#             "memory_used": decision.get("memory_used", []),
+#             "retrieved_memory": decision.get("retrieved_memory", []),
+#             "raw_model_output": decision.get("raw_model_output", ""),
+#         }
+
+#         results.append(result)
+
+#         print(json.dumps(result, indent=2), flush=True)
+
+#     return results
 
 
 def summarize_results(results: list[dict], label: str) -> None:
@@ -189,7 +229,20 @@ def log_results(memory: JsonMemory, results: list[dict], label: str) -> None:
             metadata=result,
         )
 
+def get_allowed_actions(scene_state: dict) -> list[str]:
+    if not scene_state["user_done_eating"]:
+        return ["wait"]
 
+    if scene_state["robot_state"] == "holding_clean_dish":
+        return ["place_clean_left_side", "wait"]
+
+    if scene_state["last_action_result"] == "cleanup_started" and scene_state["dirty_dishes_visible"]:
+        return ["pick_dish_right_side", "wait"]
+
+    if scene_state["dirty_dishes_visible"] and scene_state["robot_state"] == "idle":
+        return ["start_cleanup", "wait"]
+
+    return ["wait"]
 def main() -> None:
     print("[debug] main started", flush=True)
 

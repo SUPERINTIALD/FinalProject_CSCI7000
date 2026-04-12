@@ -78,7 +78,16 @@ RELEVANT MEMORY:
         memory_query: str,
         use_memory: bool = True,
     ) -> dict[str, Any]:
-        relevant_memory = self.memory.search(memory_query, limit=5) if use_memory else []
+        # relevant_memory = self.memory.search(memory_query, limit=5) if use_memory else []
+        relevant_memory = (
+            self.memory.search(
+                memory_query,
+                limit=5,
+                allowed_kinds=["preference", "strategy", "failure"],
+            )
+            if use_memory
+            else []
+        )
 
         user_prompt = self._build_user_prompt(
             scene_state=scene_state,

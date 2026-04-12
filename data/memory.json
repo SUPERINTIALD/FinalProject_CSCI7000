@@ -470,5 +470,585 @@
       "retrieved_memory": [],
       "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Select start action to begin the cleanup sequence.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
     }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='proactive cleanup trigger' | Predicted='start_cleanup' | Expected='start_cleanup' | Correct=True",
+    "metadata": {
+      "scenario": "proactive cleanup trigger",
+      "expected_action": "start_cleanup",
+      "predicted_action": "start_cleanup",
+      "correct": true,
+      "confidence": 0.95,
+      "reason": "Start the robot to begin cleaning process while respecting user preference for left-side placement and avoiding crossing over cleaned space.",
+      "memory_used": [
+        "User prefers clean dishes on left side",
+        "Robot is idle ready to start"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the robot to begin cleaning process while respecting user preference for left-side placement and avoiding crossing over cleaned space.\",\n  \"memory_used\": [\"User prefers clean dishes on left side\", \"Robot is idle ready to start\"],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='user still eating' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "user still eating",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Start the robot to begin cleaning, following the strategy of starting from the right side first.",
+      "memory_used": [
+        "Task context: dish_cleanup",
+        "User preference: clean dishes on left side",
+        "Strategy: start from right side first"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the robot to begin cleaning, following the strategy of starting from the right side first.\",\n  \"memory_used\": [\"Task context: dish_cleanup\", \"User preference: clean dishes on left side\", \"Strategy: start from right side first\"],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='already cleaning, next pick' | Predicted='start_cleanup' | Expected='pick_dish_right_side' | Correct=False",
+    "metadata": {
+      "scenario": "already cleaning, next pick",
+      "expected_action": "pick_dish_right_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Start the cleanup sequence from the right side to avoid crossing over cleaned space, as per strategy.",
+      "memory_used": [
+        "strategy: start from right side first"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the cleanup sequence from the right side to avoid crossing over cleaned space, as per strategy.\",\n  \"memory_used\": [\"strategy: start from right side first\"],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='nothing to clean' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "nothing to clean",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Start the robot to begin cleaning from the right side as per strategy, avoiding crossed space.",
+      "memory_used": [
+        "User prefers clean dishes on left; start from right first"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the robot to begin cleaning from the right side as per strategy, avoiding crossed space.\",\n  \"memory_used\": [\"User prefers clean dishes on left; start from right first\"],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='object already in hand, place by preference' | Predicted='start_cleanup' | Expected='place_clean_left_side' | Correct=False",
+    "metadata": {
+      "scenario": "object already in hand, place by preference",
+      "expected_action": "place_clean_left_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Start from right side to avoid crossing cleaned space, then move left to place clean dishes on the counter.",
+      "memory_used": [
+        "User prefers clean dishes placed on the left side of the counter.",
+        "Mug slipped during fast grasp; need slower movement for cups and mugs."
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start from right side to avoid crossing cleaned space, then move left to place clean dishes on the counter.\",\n  \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter.\", \"Mug slipped during fast grasp; need slower movement for cups and mugs.\"],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='proactive cleanup trigger' | Predicted='start_cleanup' | Expected='start_cleanup' | Correct=True",
+    "metadata": {
+      "scenario": "proactive cleanup trigger",
+      "expected_action": "start_cleanup",
+      "predicted_action": "start_cleanup",
+      "correct": true,
+      "confidence": 0.95,
+      "reason": "Start the robot to begin cleaning the counter as per task context.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start the robot to begin cleaning the counter as per task context.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='user still eating' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "user still eating",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Initiate the cleaning sequence to handle dirty dishes visible in the scene.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Initiate the cleaning sequence to handle dirty dishes visible in the scene.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='already cleaning, next pick' | Predicted='start_cleanup' | Expected='pick_dish_right_side' | Correct=False",
+    "metadata": {
+      "scenario": "already cleaning, next pick",
+      "expected_action": "pick_dish_right_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 1.0,
+      "reason": "Initiate the cleaning process for the dirty dishes visible on the counter.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Initiate the cleaning process for the dirty dishes visible on the counter.\",\n  \"memory_used\": [],\n  \"confidence\": 1.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='nothing to clean' | Predicted='start_cleanup' | Expected='wait' | Correct=False",
+    "metadata": {
+      "scenario": "nothing to clean",
+      "expected_action": "wait",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 1.0,
+      "reason": "Start robot to begin the dish cleanup task as requested.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Start robot to begin the dish cleanup task as requested.\",\n  \"memory_used\": [],\n  \"confidence\": 1.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='object already in hand, place by preference' | Predicted='start_cleanup' | Expected='place_clean_left_side' | Correct=False",
+    "metadata": {
+      "scenario": "object already in hand, place by preference",
+      "expected_action": "place_clean_left_side",
+      "predicted_action": "start_cleanup",
+      "correct": false,
+      "confidence": 0.95,
+      "reason": "Execute the cleaning task as requested by the scene state.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"start_cleanup\",\n  \"reason\": \"Execute the cleaning task as requested by the scene state.\",\n  \"memory_used\": [],\n  \"confidence\": 0.95\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='proactive cleanup trigger' | Predicted='wait' | Expected='start_cleanup' | Correct=False",
+    "metadata": {
+      "scenario": "proactive cleanup trigger",
+      "allowed_actions": [
+        "start_cleanup",
+        "wait"
+      ],
+      "expected_action": "start_cleanup",
+      "predicted_action": "wait",
+      "correct": false,
+      "confidence": 0.5,
+      "reason": "User is still eating (user_done_eating: true) and no dirty dishes are visible on the counter, so waiting is the correct choice.",
+      "memory_used": [
+        "User prefers clean dishes placed on the left side of the counter"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true) and no dirty dishes are visible on the counter, so waiting is the correct choice.\",\n  \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter\"],\n  \"confidence\": 0.5\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='user still eating' | Predicted='wait' | Expected='wait' | Correct=True",
+    "metadata": {
+      "scenario": "user still eating",
+      "allowed_actions": [
+        "wait"
+      ],
+      "expected_action": "wait",
+      "predicted_action": "wait",
+      "correct": true,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: false), so waiting is the appropriate action.",
+      "memory_used": [
+        "User prefers clean dishes placed on the left side of the counter"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: false), so waiting is the appropriate action.\",\n  \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter\"],\n  \"confidence\": 0.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='already cleaning, next pick' | Predicted='wait' | Expected='pick_dish_right_side' | Correct=False",
+    "metadata": {
+      "scenario": "already cleaning, next pick",
+      "allowed_actions": [
+        "pick_dish_right_side",
+        "wait"
+      ],
+      "expected_action": "pick_dish_right_side",
+      "predicted_action": "wait",
+      "correct": false,
+      "confidence": 0.5,
+      "reason": "User is still eating (user_done_eating: true), so waiting is the appropriate action.",
+      "memory_used": [
+        "User prefers clean dishes placed on the left side of the counter"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), so waiting is the appropriate action.\",\n  \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter\"],\n  \"confidence\": 0.5\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='nothing to clean' | Predicted='wait' | Expected='wait' | Correct=True",
+    "metadata": {
+      "scenario": "nothing to clean",
+      "allowed_actions": [
+        "wait"
+      ],
+      "expected_action": "wait",
+      "predicted_action": "wait",
+      "correct": true,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: true), so waiting is the required action.",
+      "memory_used": [
+        "User prefers clean dishes placed on the left side of the counter"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), so waiting is the required action.\",\n  \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter\"],\n  \"confidence\": 0.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "with_memory | Scenario='object already in hand, place by preference' | Predicted='wait' | Expected='place_clean_left_side' | Correct=False",
+    "metadata": {
+      "scenario": "object already in hand, place by preference",
+      "allowed_actions": [
+        "place_clean_left_side",
+        "wait"
+      ],
+      "expected_action": "place_clean_left_side",
+      "predicted_action": "wait",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: true), so waiting is the appropriate action.",
+      "memory_used": [
+        "User prefers clean dishes placed on the left side of the counter"
+      ],
+      "retrieved_memory": [
+        {
+          "kind": "preference",
+          "text": "User prefers clean dishes placed on the left side of the counter.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "strategy",
+          "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        },
+        {
+          "kind": "failure",
+          "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+          "metadata": {
+            "task": "dish_cleanup"
+          }
+        }
+      ],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), so waiting is the appropriate action.\",\n  \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter\"],\n  \"confidence\": 0.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='proactive cleanup trigger' | Predicted='wait' | Expected='start_cleanup' | Correct=False",
+    "metadata": {
+      "scenario": "proactive cleanup trigger",
+      "allowed_actions": [
+        "start_cleanup",
+        "wait"
+      ],
+      "expected_action": "start_cleanup",
+      "predicted_action": "wait",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: true), and no dirty dishes are visible. According to rule 4, the action should be wait.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), and no dirty dishes are visible. According to rule 4, the action should be wait.\",\n  \"memory_used\": [],\n  \"confidence\": 0.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='user still eating' | Predicted='wait' | Expected='wait' | Correct=True",
+    "metadata": {
+      "scenario": "user still eating",
+      "allowed_actions": [
+        "wait"
+      ],
+      "expected_action": "wait",
+      "predicted_action": "wait",
+      "correct": true,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: false), and no dirty dishes are visible, so waiting is the appropriate action.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: false), and no dirty dishes are visible, so waiting is the appropriate action.\",\n  \"memory_used\": [],\n  \"confidence\": 0.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='already cleaning, next pick' | Predicted='wait' | Expected='pick_dish_right_side' | Correct=False",
+    "metadata": {
+      "scenario": "already cleaning, next pick",
+      "allowed_actions": [
+        "pick_dish_right_side",
+        "wait"
+      ],
+      "expected_action": "pick_dish_right_side",
+      "predicted_action": "wait",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: true), so waiting is the appropriate action.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), so waiting is the appropriate action.\",\n  \"memory_used\": [],\n  \"confidence\": 0.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='nothing to clean' | Predicted='wait' | Expected='wait' | Correct=True",
+    "metadata": {
+      "scenario": "nothing to clean",
+      "allowed_actions": [
+        "wait"
+      ],
+      "expected_action": "wait",
+      "predicted_action": "wait",
+      "correct": true,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: true), so waiting is the appropriate action.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), so waiting is the appropriate action.\",\n  \"memory_used\": [],\n  \"confidence\": 0.0\n}"
+    }
+  },
+  {
+    "kind": "evaluation_result",
+    "text": "without_memory | Scenario='object already in hand, place by preference' | Predicted='wait' | Expected='place_clean_left_side' | Correct=False",
+    "metadata": {
+      "scenario": "object already in hand, place by preference",
+      "allowed_actions": [
+        "place_clean_left_side",
+        "wait"
+      ],
+      "expected_action": "place_clean_left_side",
+      "predicted_action": "wait",
+      "correct": false,
+      "confidence": 0.0,
+      "reason": "User is still eating (user_done_eating: true), so waiting is the appropriate action.",
+      "memory_used": [],
+      "retrieved_memory": [],
+      "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), so waiting is the appropriate action.\",\n  \"memory_used\": [],\n  \"confidence\": 0.0\n}"
+    }
   }
 ]

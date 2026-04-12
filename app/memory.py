@@ -41,13 +41,38 @@ class JsonMemory:
             items = [item for item in items if item.get("kind") == kind]
         return items[-limit:]
 
-    def search(self, query: str, limit: int = 5) -> list[dict[str, Any]]:
+    # def search(self, query: str, limit: int = 5) -> list[dict[str, Any]]:
+    #     query_lower = query.lower().strip()
+    #     if not query_lower:
+    #         return self.recent(limit=limit)
+
+    #     scored: list[tuple[int, dict[str, Any]]] = []
+    #     for item in self._load():
+    #         haystack = f"{item.get('kind', '')} {item.get('text', '')} {item.get('metadata', {})}".lower()
+    #         score = sum(1 for term in query_lower.split() if term in haystack)
+    #         if score > 0:
+    #             scored.append((score, item))
+
+    #     scored.sort(key=lambda x: x[0], reverse=True)
+    #     return [item for _, item in scored[:limit]]
+    def search(
+        self,
+        query: str,
+        limit: int = 5,
+        allowed_kinds: list[str] | None = None,
+    ) -> list[dict[str, Any]]:
         query_lower = query.lower().strip()
         if not query_lower:
-            return self.recent(limit=limit)
+            items = self.recent(limit=limit)
+            if allowed_kinds is not None:
+                items = [item for item in items if item.get("kind") in allowed_kinds]
+            return items
 
         scored: list[tuple[int, dict[str, Any]]] = []
         for item in self._load():
+            if allowed_kinds is not None and item.get("kind") not in allowed_kinds:
+                continue
+
             haystack = f"{item.get('kind', '')} {item.get('text', '')} {item.get('metadata', {})}".lower()
             score = sum(1 for term in query_lower.split() if term in haystack)
             if score > 0:
