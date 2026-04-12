@@ -55,7 +55,16 @@ def main() -> None:
             memory_query=scenario.memory_query,
             use_memory=True,
         )
+        print("\n[planner output]")
+        print(json.dumps(planner_output, indent=2))
 
+        semantic_action = parser.parse(
+            raw_text=planner_output["raw_model_output"],
+            scene_state=scenario.scene_state,
+        )
+
+        print("\n[parsed semantic action]")
+        print(json.dumps(semantic_action.to_dict(), indent=2))
         semantic_action = parser.parse(
             raw_text=planner_output["raw_model_output"],
             scene_state=scenario.scene_state,
