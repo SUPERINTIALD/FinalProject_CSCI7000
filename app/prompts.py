@@ -48,6 +48,8 @@ Rules:
 12. Keep the reason short.
 13. Do NOT return the key "action". You MUST return "action_type".
 14. target_object and target_surface must be null or exact names from the scene.
+15. For "pick", choose only an actionable object such as one that is dirty, used, misplaced, or unsorted. Do not choose clean objects unless the scene explicitly requires moving a clean object.
+
 
 Return this exact schema:
 {

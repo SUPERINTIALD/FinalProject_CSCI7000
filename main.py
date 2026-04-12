@@ -31,7 +31,7 @@ def main() -> None:
     planner = Planner(llm=llm, memory=memory)
 
     scenarios = generate_scenarios(
-        num_scenarios=10,
+        num_scenarios=50,
         template_names=["dish_cleanup"],
         seed=42,
     )
