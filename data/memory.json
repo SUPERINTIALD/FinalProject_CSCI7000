@@ -1972,5 +1972,2817 @@
       "retrieved_memory": [],
       "raw_model_output": "{\n  \"action\": \"wait\",\n  \"reason\": \"User is still eating (user_done_eating: true), so waiting is the appropriate action.\",\n  \"memory_used\": [],\n  \"confidence\": 0.0\n}"
     }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_2",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "table_edge"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "bowl_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "bowl_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_4",
+            "kind": "cup",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "fork_1",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "plate_1",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_3",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "clean",
+            "location": "table_edge"
+          },
+          {
+            "name": "cup_4",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "fork_1",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "cup_3",
+            "kind": "cup",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "fork_4",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "cup_1",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "plate_2",
+            "kind": "plate",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "clean",
+            "location": "table_edge"
+          },
+          {
+            "name": "bowl_4",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "cup_3",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_3",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "bowl_2",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "plate_2",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "clean",
+            "location": "center"
+          },
+          {
+            "name": "plate_2",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_4",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "plate_4",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "clean",
+            "location": "center"
+          },
+          {
+            "name": "cup_4",
+            "kind": "cup",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "plate_1",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "plate_2",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "table_edge"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "start_task -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "start_task",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": "left_counter",
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "plate_1",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "cup_4",
+            "kind": "cup",
+            "state": "clean",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "plate_1",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "plate_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "cup_3",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "cup_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "fork_2",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "plate_1",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "bowl_3",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "plate_4",
+            "kind": "plate",
+            "state": "clean",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "bowl_1",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "cup_1",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "cup_3",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "fork_4",
+            "kind": "fork",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "fork_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "cup_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "cup_2",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "bowl_4",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "center"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "plate_4",
+            "kind": "plate",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "bowl_1",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_2",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "table_edge"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "clean",
+            "location": "center"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "bowl_2",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "start_task -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "start_task",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": "left_counter",
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "clean",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "fork_2",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "cleanup_started"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "cup_2",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "active",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "pick -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "pick",
+      "outcome": "success",
+      "target_object": "bowl_1",
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "right_side"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "clean",
+            "location": "left_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "clean",
+            "location": "table_edge"
+          },
+          {
+            "name": "plate_4",
+            "kind": "plate",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "fork_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "fork_2",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "fork_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_2",
+            "kind": "plate",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "clean",
+            "location": "center"
+          },
+          {
+            "name": "fork_4",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "right_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "fork_4",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "clean",
+            "location": "center"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "clean",
+            "location": "center"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "plate_4",
+            "kind": "plate",
+            "state": "clean",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "still_eating",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "plate_1",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "bowl_2",
+            "kind": "bowl",
+            "state": "clean",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "none"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "finished_eating",
+        "robot_state": "holding_item",
+        "objects": [
+          {
+            "name": "cup_1",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "plate_2",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "left_side"
+          },
+          {
+            "name": "plate_3",
+            "kind": "plate",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": "cup_1",
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "place_failed"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "bowl_1",
+            "kind": "bowl",
+            "state": "dirty",
+            "location": "left_side"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
+  },
+  {
+    "kind": "episode_event",
+    "text": "wait -> success",
+    "metadata": {
+      "task_name": "dish_cleanup",
+      "action_type": "wait",
+      "outcome": "success",
+      "target_object": null,
+      "target_surface": null,
+      "scene_state": {
+        "task_family": "cleanup",
+        "template_name": "dish_cleanup",
+        "user_state": "left_area",
+        "robot_state": "idle",
+        "objects": [
+          {
+            "name": "fork_1",
+            "kind": "fork",
+            "state": "clean",
+            "location": "right_side"
+          },
+          {
+            "name": "cup_2",
+            "kind": "cup",
+            "state": "dirty",
+            "location": "center"
+          },
+          {
+            "name": "fork_3",
+            "kind": "fork",
+            "state": "dirty",
+            "location": "center"
+          }
+        ],
+        "surfaces": [
+          {
+            "name": "left_counter",
+            "state": "available"
+          },
+          {
+            "name": "right_counter",
+            "state": "available"
+          },
+          {
+            "name": "sink",
+            "state": "available"
+          },
+          {
+            "name": "drying_rack",
+            "state": "available"
+          }
+        ],
+        "held_object": null,
+        "placement_preference_surface": "left_counter",
+        "last_action_result": "picked_successfully"
+      },
+      "notes": "auto-logged from evaluator"
+    }
   }
 ]

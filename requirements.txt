@@ -1,2 +1,7 @@
 openai
 python-dotenv
+datasets 
+peft 
+trl 
+transformers 
+accelerate

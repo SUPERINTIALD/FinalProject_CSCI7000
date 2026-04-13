@@ -50,7 +50,6 @@ Rules:
 14. target_object and target_surface must be null or exact names from the scene.
 15. For "pick", choose only an actionable object such as one that is dirty, used, misplaced, or unsorted. Do not choose clean objects unless the scene explicitly requires moving a clean object.
 
-
 Return this exact schema:
 {
   "action_type": "one_allowed_action_type",
@@ -77,6 +76,8 @@ Field guidance:
 - memory_used:
   Include only memory that actually affected the decision.
 """
+# 15. Use HISTORY SUMMARY as compressed context. Do not repeat it verbatim. Use it only if it helps decide the next action.
+# 16. Prefer RELEVANT MEMORY over unrelated memory. If memory is not needed, rely on scene state.
 
 
 # SYSTEM_PROMPT = """

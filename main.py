@@ -90,6 +90,17 @@ def main() -> None:
             evaluation_hints=scenario.evaluation_hints,
         )
 
+
+        # =========================V4 AUTO-LOGGING TO MEMORY =========================
+        # memory.add_episode_event(
+        #     task_name=scenario.template_name,
+        #     action_type=semantic_action.action_type,
+        #     outcome="success" if result.valid_action_type and result.valid_target else "failure",
+        #     scene_state=scenario.scene_state,
+        #     target_object=semantic_action.target_object,
+        #     target_surface=semantic_action.target_surface,
+        #     notes="auto-logged from evaluator",
+        # )
         eval_results.append(result)
 
         print(json.dumps({
