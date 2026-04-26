@@ -1,0 +1,55 @@
+{
+  "best_global_step": 29,
+  "best_metric": 0.032251909375190735,
+  "best_model_checkpoint": "outputs/qwen35-08b-phase-d-lora-small\\checkpoint-29",
+  "epoch": 1.0,
+  "eval_steps": 200,
+  "global_step": 29,
+  "is_hyper_param_search": false,
+  "is_local_process_zero": true,
+  "is_world_process_zero": true,
+  "log_history": [
+    {
+      "entropy": 0.36794831627979874,
+      "epoch": 0.8888888888888888,
+      "grad_norm": 0.042529087513685226,
+      "learning_rate": 3.4482758620689657e-05,
+      "loss": 0.2979720687866211,
+      "mean_token_accuracy": 0.9319699668884277,
+      "num_tokens": 357140.0,
+      "step": 25
+    },
+    {
+      "epoch": 1.0,
+      "eval_entropy": 0.05119660496711731,
+      "eval_loss": 0.032251909375190735,
+      "eval_mean_token_accuracy": 0.988057975585644,
+      "eval_num_tokens": 400875.0,
+      "eval_runtime": 28.125,
+      "eval_samples_per_second": 0.889,
+      "eval_steps_per_second": 0.462,
+      "step": 29
+    }
+  ],
+  "logging_steps": 25,
+  "max_steps": 29,
+  "num_input_tokens_seen": 0,
+  "num_train_epochs": 1,
+  "save_steps": 200,
+  "stateful_callbacks": {
+    "TrainerControl": {
+      "args": {
+        "should_epoch_stop": false,
+        "should_evaluate": false,
+        "should_log": false,
+        "should_save": true,
+        "should_training_stop": true
+      },
+      "attributes": {}
+    }
+  },
+  "total_flos": 1529244510603264.0,
+  "train_batch_size": 2,
+  "trial_name": null,
+  "trial_params": null
+}
