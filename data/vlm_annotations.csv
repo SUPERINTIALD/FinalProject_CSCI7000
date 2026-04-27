@@ -1,0 +1,20 @@
+image_path,scenario,expected_template,expected_action,expected_has_object,notes
+data/test_images/finished_fork1.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork/chopsticks should be cleaned.
+data/test_images/finished_fork2.jpg,finished_meal,dish_cleanup,pick|start_task,true,Alternate angle of finished meal with used utensil/chopsticks.
+data/test_images/finished_tempura_chopsticks1.jpg,finished_meal,dish_cleanup,pick|start_task,true,Tempura mostly eaten; crumbs and used chopsticks indicate cleanup is appropriate.
+data/test_images/finished_tempura_chopsticks2.jpg,finished_meal,dish_cleanup,pick|start_task,true,Alternate angle of finished tempura/chopsticks scene.
+data/test_images/finished_tempura_chopsticks3.jpg,finished_meal,dish_cleanup,pick|start_task,true,Alternate angle of finished tempura/chopsticks scene.
+data/test_images/Fresh_Empty_Cup1.jpg,clean_empty_cup,counter_cleanup,wait|inspect,false,Unused clean empty cup; robot should not clean it.
+data/test_images/Fresh_Empty_Cup2.jpg,clean_empty_cup,counter_cleanup,wait|inspect,false,Alternate angle of unused clean empty cup; robot should stay idle.
+data/test_images/NoTrash.jpg,no_trash,trash_cleanup,wait|inspect,false,Floor has no visible trash; robot should not pick anything.
+data/test_images/OJ_Cup1.jpg,filled_cup,counter_cleanup,wait|inspect,false,Cup contains orange juice; robot should not take it yet.
+data/test_images/OJ_Cup2.jpg,filled_cup,counter_cleanup,wait|inspect,false,Alternate angle of filled orange juice cup; robot should wait.
+data/test_images/OJ_Cup3.jpg,filled_cup,counter_cleanup,wait|inspect,false,Alternate angle of filled orange juice cup; robot should wait.
+data/test_images/OJ_Cup_empty_1.jpg,used_cup,counter_cleanup,pick|start_task,true,Orange juice is gone with residue left; cup should be cleaned.
+data/test_images/OJ_Cup_empty_2.jpg,used_cup,counter_cleanup,pick|start_task,true,Alternate angle of used/residue cup; cup should be cleaned.
+data/test_images/OJ_Cup_empty_3jpg.jpg,used_cup,counter_cleanup,pick|start_task,true,Alternate angle of used/residue cup; cup should be cleaned.
+data/test_images/Trash_Aluminum.jpg,trash_visible,trash_cleanup,pick|start_task,true,Aluminum foil trash is visible on the floor; robot should clean it.
+data/test_images/Trash_Paper.jpg,trash_visible,trash_cleanup,pick|start_task,true,Paper trash is visible on the floor; robot should clean it.
+data/test_images/unfinished_tempura_chopsticks1.jpg,unfinished_meal,dish_cleanup,wait|inspect,false,Food remains on plate; robot should not clean yet.
+data/test_images/unfinished_tempura_chopsticks2.jpg,unfinished_meal,dish_cleanup,wait|inspect,false,Alternate angle of unfinished tempura; robot should wait.
+data/test_images/unfinished_tempura_chopsticks3.jpg,unfinished_meal,dish_cleanup,wait|inspect,false,Alternate angle of unfinished tempura; robot should wait.

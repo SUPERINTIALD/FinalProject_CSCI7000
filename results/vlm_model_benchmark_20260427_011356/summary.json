@@ -1,0 +1,46 @@
+{
+  "qwen2.5-vl-3b-instruct": {
+    "perception_action_summary": {
+      "num_cases": 19,
+      "avg_score": 0.6421,
+      "template_accuracy": 0.5789,
+      "object_presence_accuracy": 0.7895,
+      "action_accuracy": 0.5789,
+      "unsafe_false_positive_rate": 0.0526,
+      "avg_vlm_latency_sec": 10.8705,
+      "avg_planner_latency_sec": 3.3565,
+      "avg_total_latency_sec": 14.2271
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 19,
+      "avg_total_score": 0.7474,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.5789,
+      "avg_restraint_score": 0.7105,
+      "avg_progress_score": 0.5789,
+      "avg_memory_alignment_score": 0.7368
+    }
+  },
+  "qwen3.5-2b": {
+    "perception_action_summary": {
+      "num_cases": 19,
+      "avg_score": 0.6421,
+      "template_accuracy": 0.5789,
+      "object_presence_accuracy": 0.6842,
+      "action_accuracy": 0.7368,
+      "unsafe_false_positive_rate": 0.2105,
+      "avg_vlm_latency_sec": 7.0088,
+      "avg_planner_latency_sec": 3.3348,
+      "avg_total_latency_sec": 10.3437
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 19,
+      "avg_total_score": 0.8105,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.8421,
+      "avg_restraint_score": 0.7632,
+      "avg_progress_score": 0.7368,
+      "avg_memory_alignment_score": 0.7368
+    }
+  }
+}

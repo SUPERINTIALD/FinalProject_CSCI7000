@@ -4833,5 +4833,54 @@
     "metadata": {
       "task": "counter_cleanup"
     }
+  },
+  {
+    "kind": "preference",
+    "text": "User prefers clean dishes on the left counter.",
+    "metadata": {
+      "task": "dish_cleanup"
+    }
+  },
+  {
+    "kind": "strategy",
+    "text": "Start collecting dishes from the right side first.",
+    "metadata": {
+      "task": "dish_cleanup"
+    }
+  },
+  {
+    "kind": "failure",
+    "text": "Move slower when picking up mugs or cups.",
+    "metadata": {
+      "task": "dish_cleanup"
+    }
+  },
+  {
+    "kind": "strategy",
+    "text": "Trash on the floor should be picked up and placed in the trash bin.",
+    "metadata": {
+      "task": "trash_cleanup"
+    }
+  },
+  {
+    "kind": "preference",
+    "text": "User prefers the kitchen floor to stay clear of trash.",
+    "metadata": {
+      "task": "trash_cleanup"
+    }
+  },
+  {
+    "kind": "preference",
+    "text": "User prefers used cups and utensils placed in the sink.",
+    "metadata": {
+      "task": "counter_cleanup"
+    }
+  },
+  {
+    "kind": "failure",
+    "text": "Cups can slip if moved too quickly.",
+    "metadata": {
+      "task": "counter_cleanup"
+    }
   }
 ]

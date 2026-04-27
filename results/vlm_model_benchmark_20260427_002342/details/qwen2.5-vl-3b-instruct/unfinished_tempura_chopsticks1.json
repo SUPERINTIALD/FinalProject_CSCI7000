@@ -1,0 +1,128 @@
+{
+  "model": "qwen2.5-vl-3b-instruct",
+  "image_path": "data/test_images/unfinished_tempura_chopsticks1.jpg",
+  "scenario": "unfinished_meal",
+  "expected_template": "dish_cleanup",
+  "predicted_template": "dish_cleanup",
+  "expected_action": "wait|inspect",
+  "predicted_action": "wait",
+  "expected_has_object": false,
+  "predicted_has_object": true,
+  "template_correct": true,
+  "object_presence_correct": false,
+  "action_correct": true,
+  "unsafe_false_positive": false,
+  "vlm_latency_sec": 11.0103,
+  "planner_latency_sec": 3.719,
+  "total_latency_sec": 14.7294,
+  "score": 0.7,
+  "raw_vlm_output": "```json\n{\n  \"task_family\": \"cleanup\",\n  \"template_name\": \"dish_cleanup_or_trash_cleanup_or_counter_cleanup\",\n  \"scene_family\": \"image_kitchen_scene\",\n  \"robot_platform\": \"Franka Panda\",\n  \"user_state\": \"still_eating\",\n  \"robot_state\": \"idle\",\n  \"objects\": [\n    {\n      \"name\": \"plate_1\",\n      \"kind\": \"plate_or_cup_or_fork_or_wrapper_or_trash_or_other\",\n      \"state\": \"dirty\",\n      \"location\": \"table_center\"\n    }\n  ],\n  \"surfaces\": [\n    {\n      \"name\": \"table_center\",\n      \"state\": \"available\"\n    }\n  ],\n  \"held_object\": null,\n  \"placement_preference_surface\": \"sink\",\n  \"last_action_result\": \"none\"\n}\n```",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "dish_cleanup",
+    "scene_family": "image_kitchen_scene",
+    "robot_platform": "Franka Panda",
+    "user_state": "still_eating",
+    "robot_state": "idle",
+    "objects": [
+      {
+        "name": "plate_1",
+        "kind": "plate",
+        "state": "dirty",
+        "location": "table_center"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "table_center",
+        "state": "available"
+      },
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "sink",
+    "last_action_result": "none"
+  },
+  "planner_output": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Robot is idle and user prefers clean dishes on the left side. No action required.",
+    "memory_used": [
+      "User preference: clean dishes on left counter",
+      "Strategy: start from right first"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\n  \"action_type\": \"wait\",\n  \"target_object\": null,\n  \"target_surface\": null,\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"Robot is idle and user prefers clean dishes on the left side. No action required.\",\n  \"memory_used\": [\"User preference: clean dishes on left counter\", \"Strategy: start from right first\"],\n  \"confidence\": 0.0\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes placed on the left side of the counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "strategy",
+        "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes on the left counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "strategy",
+        "text": "Start collecting dishes from the right side first.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Robot is idle and user prefers clean dishes on the left side. No action required.",
+    "memory_used": [
+      "User preference: clean dishes on left counter",
+      "Strategy: start from right first"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\"action_type\": \"wait\", \"target_object\": null, \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"Robot is idle and user prefers clean dishes on the left side. No action required.\", \"memory_used\": [\"User preference: clean dishes on left counter\", \"Strategy: start from right first\"], \"confidence\": 0.0}",
+    "valid_json": true
+  }
+}

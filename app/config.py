@@ -18,6 +18,9 @@ class Settings:
 
     vlm_base_url: str = os.getenv("VLM_BASE_URL", "http://127.0.0.1:1234/v1")
     vlm_model: str = os.getenv("VLM_MODEL", "unsloth/qwen2.5-vl-3b-instruct")
+    # vlm_model: str = os.getenv("VLM_MODEL", "qwen3.5-4b")
+    # vlm_model: str = os.getenv("VLM_MODEL", "qwen3.5-2b")
+    # vlm_model: str = os.getenv("VLM_MODEL", "zai-org/glm-4.6v-flash")
     vlm_api_key: str = os.getenv("VLM_API_KEY", "lm-studio")
 
 settings = Settings()

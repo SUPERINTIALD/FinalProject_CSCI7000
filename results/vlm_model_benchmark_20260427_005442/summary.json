@@ -1,0 +1,24 @@
+{
+  "qwen2.5-vl-3b-instruct": {
+    "perception_action_summary": {
+      "num_cases": 19,
+      "avg_score": 0.6421,
+      "template_accuracy": 0.5789,
+      "object_presence_accuracy": 0.7895,
+      "action_accuracy": 0.5789,
+      "unsafe_false_positive_rate": 0.0526,
+      "avg_vlm_latency_sec": 11.5209,
+      "avg_planner_latency_sec": 3.6494,
+      "avg_total_latency_sec": 15.1705
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 19,
+      "avg_total_score": 0.7474,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.5789,
+      "avg_restraint_score": 0.7105,
+      "avg_progress_score": 0.5789,
+      "avg_memory_alignment_score": 0.7368
+    }
+  }
+}

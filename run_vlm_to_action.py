@@ -81,9 +81,24 @@ def main() -> None:
         use_memory=args.use_memory,
     )
 
-    raw = planner_output.get("raw_model_output", json.dumps(planner_output))
+    # raw = planner_output.get("raw_model_output", json.dumps(planner_output))
+    # semantic_action = parser_obj.parse(
+    #     raw_text=raw,
+    #     scene_state=scene_state,
+    # )
+    safe_action_for_parse = {
+        "action_type": planner_output.get("action_type"),
+        "target_object": planner_output.get("target_object"),
+        "target_surface": planner_output.get("target_surface"),
+        "target_zone": planner_output.get("target_zone"),
+        "parameters": planner_output.get("parameters", {}),
+        "reason": planner_output.get("reason", ""),
+        "memory_used": planner_output.get("memory_used", []),
+        "confidence": planner_output.get("confidence", 0.0),
+    }
+
     semantic_action = parser_obj.parse(
-        raw_text=raw,
+        raw_text=json.dumps(safe_action_for_parse),
         scene_state=scene_state,
     )
 
