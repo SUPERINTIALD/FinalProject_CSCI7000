@@ -176,19 +176,23 @@ RELEVANT MEMORY:
     def _search_memory(
         self,
         memory_query: str,
+        scene_state: dict[str, Any],
         limit: int = 5,
         use_memory: bool = True,
     ) -> list[dict[str, Any]]:
         if not use_memory:
             return []
 
-        # Prefer stable memory only if the memory class supports filtering.
+        task_name = scene_state.get("template_name")
+
         try:
-            return self.memory.search(
+            task_memory = self.memory.search(
                 memory_query,
                 limit=limit,
                 allowed_kinds=["preference", "strategy", "failure"],
+                metadata_filters={"task": task_name},
             )
+            return task_memory
         except TypeError:
             return self.memory.search(memory_query, limit=limit)
 
@@ -275,8 +279,14 @@ RELEVANT MEMORY:
         memory_query: str,
         use_memory: bool = True,
     ) -> dict[str, Any]:
+        # relevant_memory = self._search_memory(
+        #     memory_query=memory_query,
+        #     limit=5,
+        #     use_memory=use_memory,
+        # )
         relevant_memory = self._search_memory(
             memory_query=memory_query,
+            scene_state=scene_state,
             limit=5,
             use_memory=use_memory,
         )

@@ -7,9 +7,8 @@ from app.action_parser import SemanticAction
 from app.task_templates import get_task_template
 
 
-ACTIONABLE_STATES = {"dirty", "used", "misplaced", "unsorted"}
-
-
+ACTIONABLE_STATES = {"dirty", "used", "misplaced", "unsorted", "discarded"}
+BUSY_USER_STATES = {"still_eating", "using_table", "using_counter"}
 @dataclass
 class EvaluationResult:
     scenario_id: str
@@ -43,7 +42,7 @@ def get_valid_action_types(scene_state: dict[str, Any], template_name: str) -> l
     held_object = scene_state.get("held_object")
     actionable = _actionable_objects(scene_state)
 
-    if user_state in {"still_eating", "using_table"}:
+    if user_state in BUSY_USER_STATES:
         return ["wait", "inspect"]
 
     if held_object:

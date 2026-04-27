@@ -49,7 +49,8 @@ Rules:
 13. Do NOT return the key "action". You MUST return "action_type".
 14. target_object and target_surface must be null or exact names from the scene.
 15. For "pick", choose only an actionable object such as one that is dirty, used, misplaced, or unsorted. Do not choose clean objects unless the scene explicitly requires moving a clean object.
-
+16. For trash_cleanup, if a used, misplaced, discarded, or unsorted trash-like object is visible and the user is not actively blocking the robot, prefer "pick" or "start_task" over "wait".
+17. If the robot is holding a trash object, prefer placing it in "trash_bin".
 Return this exact schema:
 {
   "action_type": "one_allowed_action_type",

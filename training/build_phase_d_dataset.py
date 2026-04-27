@@ -1,3 +1,5 @@
+# python -m training.build_phase_d_dataset --num-scenarios 2000 --template dish_cleanup --output-dir data/phase_d_sft
+
 from __future__ import annotations
 
 import argparse

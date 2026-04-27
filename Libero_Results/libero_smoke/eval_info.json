@@ -1,0 +1,44 @@
+{
+  "per_task": [
+    {
+      "task_group": "libero_object",
+      "task_id": 0,
+      "metrics": {
+        "sum_rewards": [
+          0.0
+        ],
+        "max_rewards": [
+          0.0
+        ],
+        "successes": [
+          false
+        ],
+        "video_paths": [
+          "/mnt/d/Yuri/CU BOULDER/Masters/Sem 2/CSCI 7000/FinalProject_CSCI7000/Libero_Results/libero_smoke/videos/libero_object_0/eval_episode_0.mp4"
+        ]
+      }
+    }
+  ],
+  "per_group": {
+    "libero_object": {
+      "avg_sum_reward": 0.0,
+      "avg_max_reward": 0.0,
+      "pc_success": 0.0,
+      "n_episodes": 1,
+      "video_paths": [
+        "/mnt/d/Yuri/CU BOULDER/Masters/Sem 2/CSCI 7000/FinalProject_CSCI7000/Libero_Results/libero_smoke/videos/libero_object_0/eval_episode_0.mp4"
+      ]
+    }
+  },
+  "overall": {
+    "avg_sum_reward": 0.0,
+    "avg_max_reward": 0.0,
+    "pc_success": 0.0,
+    "n_episodes": 1,
+    "eval_s": 113.20962190628052,
+    "eval_ep_s": 113.20962262153625,
+    "video_paths": [
+      "/mnt/d/Yuri/CU BOULDER/Masters/Sem 2/CSCI 7000/FinalProject_CSCI7000/Libero_Results/libero_smoke/videos/libero_object_0/eval_episode_0.mp4"
+    ]
+  }
+}

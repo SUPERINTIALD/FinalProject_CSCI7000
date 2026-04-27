@@ -62,6 +62,78 @@ TASK_TEMPLATES: dict[str, TaskTemplate] = {
             {"kind": "preference", "text": "User prefers cups grouped together when clearing the table."},
         ),
     ),
+    "trash_cleanup": TaskTemplate(
+        name="trash_cleanup",
+        description="Pick up trash or used disposable items from the kitchen floor and place them in the trash bin.",
+        task_family="cleanup",
+        user_states=("using_kitchen", "finished_eating", "left_area"),
+        robot_states=("idle", "active", "holding_item"),
+        object_catalog=(
+            {
+                "kind": "wrapper",
+                "possible_states": ("misplaced", "discarded"),
+                "possible_locations": ("floor", "near_counter", "under_table"),
+            },
+            {
+                "kind": "paper_towel",
+                "possible_states": ("used", "clean"),
+                "possible_locations": ("floor", "near_sink", "counter"),
+            },
+            {
+                "kind": "napkin",
+                "possible_states": ("used", "clean"),
+                "possible_locations": ("floor", "table_edge", "counter"),
+            },
+            {
+                "kind": "spoon",
+                "possible_states": ("clean",),
+                "possible_locations": ("counter", "table_edge"),
+            },
+        ),
+        surface_names=("floor", "trash_bin", "counter", "sink"),
+        proactive_user_states=("finished_eating", "left_area"),
+        memory_examples=(
+            {"kind": "strategy", "text": "Trash on the floor should be picked up and placed in the trash bin."},
+            {"kind": "preference", "text": "User prefers the kitchen floor to stay clear of trash."},
+        ),
+    ),
+
+    "counter_cleanup": TaskTemplate(
+        name="counter_cleanup",
+        description="Clear leftover cups, utensils, or dishes from the kitchen counter after the user leaves.",
+        task_family="cleanup",
+        user_states=("using_counter", "finished_eating", "left_area"),
+        robot_states=("idle", "active", "holding_item"),
+        object_catalog=(
+            {
+                "kind": "cup",
+                "possible_states": ("used", "clean"),
+                "possible_locations": ("left_counter", "right_counter", "table_edge"),
+            },
+            {
+                "kind": "fork",
+                "possible_states": ("used", "clean"),
+                "possible_locations": ("left_counter", "right_counter", "table_edge"),
+            },
+            {
+                "kind": "plate",
+                "possible_states": ("used", "clean"),
+                "possible_locations": ("left_counter", "right_counter", "table_edge"),
+            },
+            {
+                "kind": "sponge",
+                "possible_states": ("clean",),
+                "possible_locations": ("sink", "right_counter"),
+            },
+        ),
+        surface_names=("left_counter", "right_counter", "sink", "drying_rack"),
+        proactive_user_states=("finished_eating", "left_area"),
+        memory_examples=(
+            {"kind": "preference", "text": "User prefers used cups and utensils placed in the sink."},
+            {"kind": "failure", "text": "Cups can slip if moved too quickly."},
+        ),
+    ),
+
     "object_sorting": TaskTemplate(
         name="object_sorting",
         description="Sort mixed objects into preferred zones.",

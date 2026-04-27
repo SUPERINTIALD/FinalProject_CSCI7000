@@ -220,10 +220,125 @@ def _set_object_sorting_scene(rng: random.Random) -> tuple[dict[str, Any], dict[
 
     return scene_state, hints
 
+def _set_trash_cleanup_scene(rng: random.Random) -> tuple[dict[str, Any], dict[str, Any]]:
+    user_state = rng.choice(["using_kitchen", "finished_eating", "left_area"])
+    robot_state = rng.choice(["idle", "active", "holding_item"])
+
+    objects = _make_objects("trash_cleanup", rng)
+    actionable = _first_actionable_object(objects)
+
+    held_object = None
+    if robot_state == "holding_item":
+        held_object = actionable["name"] if actionable is not None else objects[0]["name"]
+
+    scene_state = {
+        "task_family": "cleanup",
+        "template_name": "trash_cleanup",
+        "scene_family": "libero_style_kitchen",
+        "robot_platform": "Franka Panda",
+        "user_state": user_state,
+        "robot_state": robot_state,
+        "objects": objects,
+        "surfaces": [
+            {"name": "floor", "state": "available"},
+            {"name": "trash_bin", "state": "available"},
+            {"name": "counter", "state": "available"},
+            {"name": "sink", "state": "available"},
+        ],
+        "held_object": held_object,
+        "placement_preference_surface": "trash_bin",
+        "last_action_result": rng.choice(["none", "trash_seen", "picked_successfully", "place_failed"]),
+    }
+
+    should_wait = actionable is None and held_object is None
+    should_be_proactive = user_state in {"finished_eating", "left_area"} and (
+        actionable is not None or held_object is not None
+    )
+
+    if should_wait:
+        preferred_action_types = ["wait"]
+    elif held_object is not None:
+        preferred_action_types = ["place"]
+    elif robot_state == "idle":
+        preferred_action_types = ["start_task", "pick"]
+    else:
+        preferred_action_types = ["pick", "inspect"]
+
+    hints = {
+        "should_wait": should_wait,
+        "should_be_proactive": should_be_proactive,
+        "preferred_action_types": preferred_action_types,
+        "memory_relevant": held_object is not None or actionable is not None,
+        "expected_preference_surface": "trash_bin",
+        "actionable_object_present": actionable is not None,
+        "task_family": "cleanup",
+    }
+
+    return scene_state, hints
+
+
+def _set_counter_cleanup_scene(rng: random.Random) -> tuple[dict[str, Any], dict[str, Any]]:
+    user_state = rng.choice(["using_counter", "finished_eating", "left_area"])
+    robot_state = rng.choice(["idle", "active", "holding_item"])
+
+    objects = _make_objects("counter_cleanup", rng)
+    actionable = _first_actionable_object(objects)
+
+    held_object = None
+    if robot_state == "holding_item":
+        held_object = actionable["name"] if actionable is not None else objects[0]["name"]
+
+    scene_state = {
+        "task_family": "cleanup",
+        "template_name": "counter_cleanup",
+        "scene_family": "libero_style_kitchen",
+        "robot_platform": "Franka Panda",
+        "user_state": user_state,
+        "robot_state": robot_state,
+        "objects": objects,
+        "surfaces": [
+            {"name": "left_counter", "state": "available"},
+            {"name": "right_counter", "state": "available"},
+            {"name": "sink", "state": "available"},
+            {"name": "drying_rack", "state": "available"},
+        ],
+        "held_object": held_object,
+        "placement_preference_surface": "sink",
+        "last_action_result": rng.choice(["none", "counter_item_seen", "picked_successfully", "place_failed"]),
+    }
+
+    should_wait = user_state == "using_counter" or (actionable is None and held_object is None)
+    should_be_proactive = user_state in {"finished_eating", "left_area"} and (
+        actionable is not None or held_object is not None
+    )
+
+    if should_wait:
+        preferred_action_types = ["wait"]
+    elif held_object is not None:
+        preferred_action_types = ["place"]
+    elif robot_state == "idle":
+        preferred_action_types = ["start_task", "pick"]
+    else:
+        preferred_action_types = ["pick", "inspect"]
+
+    hints = {
+        "should_wait": should_wait,
+        "should_be_proactive": should_be_proactive,
+        "preferred_action_types": preferred_action_types,
+        "memory_relevant": held_object is not None or actionable is not None,
+        "expected_preference_surface": "sink",
+        "actionable_object_present": actionable is not None,
+        "task_family": "cleanup",
+    }
+
+    return scene_state, hints
+
 
 SCENARIO_BUILDERS = {
     "dish_cleanup": _set_dish_cleanup_scene,
     "table_reset": _set_table_reset_scene,
+    "trash_cleanup": _set_trash_cleanup_scene,
+    "counter_cleanup": _set_counter_cleanup_scene,
     "object_sorting": _set_object_sorting_scene,
 }
 
