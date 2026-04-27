@@ -16,4 +16,8 @@ class Settings:
     lmstudio_api_key: str = os.getenv("LMSTUDIO_API_KEY", "lm-studio")
     memory_path: str = os.getenv("MEMORY_PATH", "data/memory.json")
 
+    vlm_base_url: str = os.getenv("VLM_BASE_URL", "http://127.0.0.1:1234/v1")
+    vlm_model: str = os.getenv("VLM_MODEL", "unsloth/qwen2.5-vl-3b-instruct")
+    vlm_api_key: str = os.getenv("VLM_API_KEY", "lm-studio")
+
 settings = Settings()
