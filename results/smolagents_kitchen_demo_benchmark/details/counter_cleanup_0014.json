@@ -1,0 +1,204 @@
+{
+  "scenario_id": "counter_cleanup_0014",
+  "template_name": "counter_cleanup",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "counter_cleanup",
+    "scene_family": "libero_style_kitchen",
+    "robot_platform": "Franka Panda",
+    "user_state": "using_counter",
+    "robot_state": "active",
+    "objects": [
+      {
+        "name": "fork_1",
+        "kind": "fork",
+        "state": "used",
+        "location": "table_edge"
+      },
+      {
+        "name": "plate_2",
+        "kind": "plate",
+        "state": "clean",
+        "location": "table_edge"
+      },
+      {
+        "name": "plate_3",
+        "kind": "plate",
+        "state": "clean",
+        "location": "table_edge"
+      },
+      {
+        "name": "sponge_4",
+        "kind": "sponge",
+        "state": "clean",
+        "location": "sink"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "sink",
+    "last_action_result": "counter_item_seen"
+  },
+  "allowed_actions": [
+    "wait",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers used cups and utensils placed in the sink; no object is dirty or misplaced requiring immediate action.",
+    "memory_used": [
+      "User preference for used items in sink"
+    ],
+    "confidence": 0.5,
+    "raw_model_output": "{\n  \"action_type\": \"wait\",\n  \"target_object\": null,\n  \"target_surface\": null,\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"User prefers used cups and utensils placed in the sink; no object is dirty or misplaced requiring immediate action.\",\n  \"memory_used\": [\"User preference for used items in sink\"],\n  \"confidence\": 0.5\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Cups can slip if moved too quickly.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Cups can slip if moved too quickly.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers used cups and utensils placed in the sink; no object is dirty or misplaced requiring immediate action.",
+    "memory_used": [
+      "User preference for used items in sink"
+    ],
+    "confidence": 0.5,
+    "raw_model_output": "{\"action_type\": \"wait\", \"target_object\": null, \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"User prefers used cups and utensils placed in the sink; no object is dirty or misplaced requiring immediate action.\", \"memory_used\": [\"User preference for used items in sink\"], \"confidence\": 0.5}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Robot waited.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "counter_cleanup",
+      "scene_family": "libero_style_kitchen",
+      "robot_platform": "Franka Panda",
+      "user_state": "using_counter",
+      "robot_state": "active",
+      "objects": [
+        {
+          "name": "fork_1",
+          "kind": "fork",
+          "state": "used",
+          "location": "table_edge"
+        },
+        {
+          "name": "plate_2",
+          "kind": "plate",
+          "state": "clean",
+          "location": "table_edge"
+        },
+        {
+          "name": "plate_3",
+          "kind": "plate",
+          "state": "clean",
+          "location": "table_edge"
+        },
+        {
+          "name": "sponge_4",
+          "kind": "sponge",
+          "state": "clean",
+          "location": "sink"
+        }
+      ],
+      "surfaces": [
+        {
+          "name": "left_counter",
+          "state": "available"
+        },
+        {
+          "name": "right_counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        },
+        {
+          "name": "drying_rack",
+          "state": "available"
+        }
+      ],
+      "held_object": null,
+      "placement_preference_surface": "sink",
+      "last_action_result": "waited"
+    }
+  },
+  "evaluation": {
+    "scenario_id": "counter_cleanup_0014",
+    "template_name": "counter_cleanup",
+    "action_type": "wait",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 1.0,
+    "memory_alignment_score": 0.5,
+    "total_score": 0.95,
+    "notes": []
+  },
+  "agent_result": "The robot executed a wait action to respect the user's preference for used items in the sink. The scene remained unchanged, with all objects (fork_1, plate_2, plate_3, sponge_4) still in their original locations. The task is complete.",
+  "agent_error": null,
+  "decision_time_sec": 0.5008706000080565,
+  "agent_time_sec": 1.7607759999955306
+}

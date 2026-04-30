@@ -1,0 +1,182 @@
+{
+  "scenario_id": "trash_cleanup_0045",
+  "template_name": "trash_cleanup",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "trash_cleanup",
+    "scene_family": "libero_style_kitchen",
+    "robot_platform": "Franka Panda",
+    "user_state": "finished_eating",
+    "robot_state": "active",
+    "objects": [
+      {
+        "name": "spoon_1",
+        "kind": "spoon",
+        "state": "clean",
+        "location": "table_edge"
+      },
+      {
+        "name": "spoon_2",
+        "kind": "spoon",
+        "state": "clean",
+        "location": "counter"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "floor",
+        "state": "available"
+      },
+      {
+        "name": "trash_bin",
+        "state": "available"
+      },
+      {
+        "name": "counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "trash_bin",
+    "last_action_result": "place_failed"
+  },
+  "allowed_actions": [
+    "wait",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers kitchen floor and counter clear of trash; no object is visible to pick up.",
+    "memory_used": [
+      "prefers clean surfaces",
+      "no trash objects in scene"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\n  \"action_type\": \"wait\",\n  \"target_object\": null,\n  \"target_surface\": null,\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"User prefers kitchen floor and counter clear of trash; no object is visible to pick up.\",\n  \"memory_used\": [\"prefers clean surfaces\", \"no trash objects in scene\"],\n  \"confidence\": 0.0\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "preference",
+        "text": "User prefers the kitchen floor and counter area to stay clear of trash.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      },
+      {
+        "kind": "strategy",
+        "text": "Trash on the floor or near the counter should be picked up and placed in the trash bin.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers the kitchen floor to stay clear of trash.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers the kitchen floor to stay clear of trash.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      },
+      {
+        "kind": "strategy",
+        "text": "Trash on the floor should be picked up and placed in the trash bin.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers kitchen floor and counter clear of trash; no object is visible to pick up.",
+    "memory_used": [
+      "prefers clean surfaces",
+      "no trash objects in scene"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\"action_type\": \"wait\", \"target_object\": null, \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"User prefers kitchen floor and counter clear of trash; no object is visible to pick up.\", \"memory_used\": [\"prefers clean surfaces\", \"no trash objects in scene\"], \"confidence\": 0.0}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Robot waited.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "trash_cleanup",
+      "scene_family": "libero_style_kitchen",
+      "robot_platform": "Franka Panda",
+      "user_state": "finished_eating",
+      "robot_state": "active",
+      "objects": [
+        {
+          "name": "spoon_1",
+          "kind": "spoon",
+          "state": "clean",
+          "location": "table_edge"
+        },
+        {
+          "name": "spoon_2",
+          "kind": "spoon",
+          "state": "clean",
+          "location": "counter"
+        }
+      ],
+      "surfaces": [
+        {
+          "name": "floor",
+          "state": "available"
+        },
+        {
+          "name": "trash_bin",
+          "state": "available"
+        },
+        {
+          "name": "counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        }
+      ],
+      "held_object": null,
+      "placement_preference_surface": "trash_bin",
+      "last_action_result": "waited"
+    }
+  },
+  "evaluation": {
+    "scenario_id": "trash_cleanup_0045",
+    "template_name": "trash_cleanup",
+    "action_type": "wait",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 1.0,
+    "memory_alignment_score": 1.0,
+    "total_score": 1.0,
+    "notes": []
+  },
+  "agent_result": "The robot successfully executed the wait action in the Franka Panda kitchen simulator. The scene remained unchanged, with both spoons still at their original locations (spoon_1 on table_edge and spoon_2 on counter). The user state was \"finished_eating\" and robot state was \"active\". No trash objects were present to pick up, so no action was taken.",
+  "agent_error": null,
+  "decision_time_sec": 0.48243319999892265,
+  "agent_time_sec": 1.850825999994413
+}

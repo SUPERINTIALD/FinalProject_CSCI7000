@@ -1,0 +1,190 @@
+{
+  "scenario_id": "dish_cleanup_0034",
+  "template_name": "dish_cleanup",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "dish_cleanup",
+    "user_state": "still_eating",
+    "robot_state": "active",
+    "objects": [
+      {
+        "name": "cup_1",
+        "kind": "cup",
+        "state": "dirty",
+        "location": "right_side"
+      },
+      {
+        "name": "plate_2",
+        "kind": "plate",
+        "state": "dirty",
+        "location": "table_edge"
+      },
+      {
+        "name": "cup_3",
+        "kind": "cup",
+        "state": "clean",
+        "location": "right_side"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "left_counter",
+    "last_action_result": "picked_successfully"
+  },
+  "allowed_actions": [
+    "wait",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User is still_eating and holding no object; memory indicates slower movement for cups/mugs but current state allows waiting.",
+    "memory_used": [
+      "user_state: still_eating",
+      "no_held_object"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\n  \"action_type\": \"wait\",\n  \"target_object\": null,\n  \"target_surface\": null,\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"User is still_eating and holding no object; memory indicates slower movement for cups/mugs but current state allows waiting.\",\n  \"memory_used\": [\"user_state: still_eating\", \"no_held_object\"]\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "failure",
+        "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Move slower when picking up mugs or cups.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Move slower when picking up mugs or cups.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Move slower when picking up mugs or cups.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes placed on the left side of the counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User is still_eating and holding no object; memory indicates slower movement for cups/mugs but current state allows waiting.",
+    "memory_used": [
+      "user_state: still_eating",
+      "no_held_object"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\"action_type\": \"wait\", \"target_object\": null, \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"User is still_eating and holding no object; memory indicates slower movement for cups/mugs but current state allows waiting.\", \"memory_used\": [\"user_state: still_eating\", \"no_held_object\"], \"confidence\": 0.0}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Robot waited.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "dish_cleanup",
+      "user_state": "still_eating",
+      "robot_state": "active",
+      "objects": [
+        {
+          "name": "cup_1",
+          "kind": "cup",
+          "state": "dirty",
+          "location": "right_side"
+        },
+        {
+          "name": "plate_2",
+          "kind": "plate",
+          "state": "dirty",
+          "location": "table_edge"
+        },
+        {
+          "name": "cup_3",
+          "kind": "cup",
+          "state": "clean",
+          "location": "right_side"
+        }
+      ],
+      "surfaces": [
+        {
+          "name": "left_counter",
+          "state": "available"
+        },
+        {
+          "name": "right_counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        },
+        {
+          "name": "drying_rack",
+          "state": "available"
+        }
+      ],
+      "held_object": null,
+      "placement_preference_surface": "left_counter",
+      "last_action_result": "waited"
+    }
+  },
+  "evaluation": {
+    "scenario_id": "dish_cleanup_0034",
+    "template_name": "dish_cleanup",
+    "action_type": "wait",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 1.0,
+    "memory_alignment_score": 0.5,
+    "total_score": 0.95,
+    "notes": []
+  },
+  "agent_result": "Calling tools:\n[{'id': '730710485', 'type': 'function', 'function': {'name': 'inspect_kitchen_scene', 'arguments': {}}}]",
+  "agent_error": null,
+  "decision_time_sec": 0.4873217999993358,
+  "agent_time_sec": 2.0432379999983823
+}

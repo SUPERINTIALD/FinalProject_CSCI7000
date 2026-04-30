@@ -1,0 +1,193 @@
+{
+  "scenario_id": "counter_cleanup_0037",
+  "template_name": "counter_cleanup",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "counter_cleanup",
+    "scene_family": "libero_style_kitchen",
+    "robot_platform": "Franka Panda",
+    "user_state": "finished_eating",
+    "robot_state": "holding_item",
+    "objects": [
+      {
+        "name": "sponge_1",
+        "kind": "sponge",
+        "state": "clean",
+        "location": "right_counter"
+      },
+      {
+        "name": "plate_2",
+        "kind": "plate",
+        "state": "used",
+        "location": "left_counter"
+      },
+      {
+        "name": "sponge_3",
+        "kind": "sponge",
+        "state": "clean",
+        "location": "sink"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": "plate_2",
+    "placement_preference_surface": "sink",
+    "last_action_result": "picked_successfully"
+  },
+  "allowed_actions": [
+    "place",
+    "wait",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "place",
+    "target_object": null,
+    "target_surface": "sink",
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers used cups and utensils placed in the sink; plate_2 is used and located on left_counter.",
+    "memory_used": [
+      "User preference for used items in sink"
+    ],
+    "confidence": 0.95,
+    "raw_model_output": "{\n  \"action_type\": \"place\",\n  \"target_object\": null,\n  \"target_surface\": \"sink\",\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"User prefers used cups and utensils placed in the sink; plate_2 is used and located on left_counter.\",\n  \"memory_used\": [\"User preference for used items in sink\"],\n  \"confidence\": 0.95\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Cups can slip if moved too quickly.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Cups can slip if moved too quickly.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "place",
+    "target_object": null,
+    "target_surface": "sink",
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers used cups and utensils placed in the sink; plate_2 is used and located on left_counter.",
+    "memory_used": [
+      "User preference for used items in sink"
+    ],
+    "confidence": 0.95,
+    "raw_model_output": "{\"action_type\": \"place\", \"target_object\": null, \"target_surface\": \"sink\", \"target_zone\": null, \"parameters\": {}, \"reason\": \"User prefers used cups and utensils placed in the sink; plate_2 is used and located on left_counter.\", \"memory_used\": [\"User preference for used items in sink\"], \"confidence\": 0.95}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Placed plate_2 on/in sink.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "counter_cleanup",
+      "scene_family": "libero_style_kitchen",
+      "robot_platform": "Franka Panda",
+      "user_state": "finished_eating",
+      "robot_state": "active",
+      "objects": [
+        {
+          "name": "sponge_1",
+          "kind": "sponge",
+          "state": "clean",
+          "location": "right_counter"
+        },
+        {
+          "name": "plate_2",
+          "kind": "plate",
+          "state": "placed",
+          "location": "sink"
+        },
+        {
+          "name": "sponge_3",
+          "kind": "sponge",
+          "state": "clean",
+          "location": "sink"
+        }
+      ],
+      "surfaces": [
+        {
+          "name": "left_counter",
+          "state": "available"
+        },
+        {
+          "name": "right_counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        },
+        {
+          "name": "drying_rack",
+          "state": "available"
+        }
+      ],
+      "held_object": null,
+      "placement_preference_surface": "sink",
+      "last_action_result": "placed_successfully"
+    }
+  },
+  "evaluation": {
+    "scenario_id": "counter_cleanup_0037",
+    "template_name": "counter_cleanup",
+    "action_type": "place",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 1.0,
+    "memory_alignment_score": 1.0,
+    "total_score": 1.0,
+    "notes": []
+  },
+  "agent_result": "Calling tools:\n[{'id': '588566886', 'type': 'function', 'function': {'name': 'inspect_kitchen_scene', 'arguments': {}}}]",
+  "agent_error": null,
+  "decision_time_sec": 0.49400320000131615,
+  "agent_time_sec": 1.8548308000026736
+}

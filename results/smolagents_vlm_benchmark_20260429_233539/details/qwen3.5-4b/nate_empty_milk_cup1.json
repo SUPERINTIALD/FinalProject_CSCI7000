@@ -1,0 +1,166 @@
+{
+  "model": "qwen3.5-4b",
+  "image_path": "data/test_images/nate_empty_milk_cup1.jpg",
+  "scenario": "used_cup",
+  "expected_template": "counter_cleanup",
+  "predicted_template": "trash_cleanup",
+  "expected_action": "pick|start_task",
+  "predicted_action": "inspect",
+  "expected_has_object": true,
+  "predicted_has_object": false,
+  "template_correct": false,
+  "object_presence_correct": false,
+  "action_correct": false,
+  "unsafe_false_positive": false,
+  "valid_action_bool": true,
+  "vlm_latency_sec": 49.1136,
+  "planner_latency_sec": 0.5322,
+  "execution_latency_sec": 0.0,
+  "agent_latency_sec": 106.6258,
+  "total_latency_sec": 106.626,
+  "score": 0.0,
+  "raw_vlm_output": "",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "trash_cleanup",
+    "scene_family": "image_kitchen_scene",
+    "robot_platform": "Franka Panda",
+    "user_state": "left_area",
+    "robot_state": "idle",
+    "objects": [],
+    "surfaces": [
+      {
+        "name": "floor",
+        "state": "available"
+      },
+      {
+        "name": "trash_bin",
+        "state": "available"
+      },
+      {
+        "name": "counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "trash_bin",
+    "last_action_result": "none"
+  },
+  "allowed_actions": [
+    "wait",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "inspect",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Robot is idle and no object is visible; memory suggests cleaning up trash on the floor or counter but no specific location is identified yet.",
+    "memory_used": [
+      "Memory indicates need to clean up trash on floor/counter"
+    ],
+    "confidence": 0.5,
+    "raw_model_output": "{\n  \"action_type\": \"inspect\",\n  \"target_object\": null,\n  \"target_surface\": null,\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"Robot is idle and no object is visible; memory suggests cleaning up trash on the floor or counter but no specific location is identified yet.\",\n  \"memory_used\": [\"Memory indicates need to clean up trash on floor/counter\"],\n  \"confidence\": 0.5\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "strategy",
+        "text": "Trash on the floor or near the counter should be picked up and placed in the trash bin.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers the kitchen floor and counter area to stay clear of trash.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      },
+      {
+        "kind": "strategy",
+        "text": "Trash on the floor should be picked up and placed in the trash bin.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers the kitchen floor to stay clear of trash.",
+        "metadata": {
+          "task": "trash_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "inspect",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Robot is idle and no object is visible; memory suggests cleaning up trash on the floor or counter but no specific location is identified yet.",
+    "memory_used": [
+      "Memory indicates need to clean up trash on floor/counter"
+    ],
+    "confidence": 0.5,
+    "raw_model_output": "{\"action_type\": \"inspect\", \"target_object\": null, \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"Robot is idle and no object is visible; memory suggests cleaning up trash on the floor or counter but no specific location is identified yet.\", \"memory_used\": [\"Memory indicates need to clean up trash on floor/counter\"], \"confidence\": 0.5}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Robot inspected the scene.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "trash_cleanup",
+      "scene_family": "image_kitchen_scene",
+      "robot_platform": "Franka Panda",
+      "user_state": "left_area",
+      "robot_state": "idle",
+      "objects": [],
+      "surfaces": [
+        {
+          "name": "floor",
+          "state": "available"
+        },
+        {
+          "name": "trash_bin",
+          "state": "available"
+        },
+        {
+          "name": "counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        }
+      ],
+      "held_object": null,
+      "placement_preference_surface": "trash_bin",
+      "last_action_result": "inspected"
+    }
+  },
+  "planner_eval": {
+    "scenario_id": "nate_empty_milk_cup1",
+    "template_name": "trash_cleanup",
+    "action_type": "inspect",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 0.6,
+    "memory_alignment_score": 0.5,
+    "total_score": 0.87,
+    "notes": [
+      "inspect is acceptable but lower progress than a direct task action"
+    ]
+  },
+  "agent_result": "Calling tools:\n[{'id': '687178140', 'type': 'function', 'function': {'name': 'plan_proactive_robot_action', 'arguments': {}}}]",
+  "agent_error": null
+}

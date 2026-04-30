@@ -1,0 +1,46 @@
+{
+  "overall": {
+    "num_scenarios": 50,
+    "avg_total_score": 0.828,
+    "valid_action_rate": 1.0,
+    "avg_proactive_score": 0.76,
+    "avg_restraint_score": 0.86,
+    "avg_progress_score": 0.74,
+    "avg_memory_alignment_score": 0.56,
+    "avg_decision_time_sec": 0.53,
+    "median_decision_time_sec": 0.5052,
+    "avg_agent_time_sec": 1.8809,
+    "execution_success_rate": 0.98,
+    "agent_error_rate": 0.0
+  },
+  "per_task": {
+    "counter_cleanup": {
+      "num_scenarios": 20,
+      "avg_total_score": 0.8825,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.85,
+      "avg_restraint_score": 0.925,
+      "avg_progress_score": 0.85,
+      "avg_memory_alignment_score": 0.575
+    },
+    "dish_cleanup": {
+      "num_scenarios": 17,
+      "avg_total_score": 0.9088,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.8824,
+      "avg_restraint_score": 0.9412,
+      "avg_progress_score": 0.8824,
+      "avg_memory_alignment_score": 0.6765
+    },
+    "trash_cleanup": {
+      "num_scenarios": 13,
+      "avg_total_score": 0.6385,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.4615,
+      "avg_restraint_score": 0.6538,
+      "avg_progress_score": 0.3846,
+      "avg_memory_alignment_score": 0.3846
+    }
+  },
+  "agent_errors": []
+}

@@ -1,0 +1,190 @@
+{
+  "scenario_id": "dish_cleanup_0004",
+  "template_name": "dish_cleanup",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "dish_cleanup",
+    "user_state": "finished_eating",
+    "robot_state": "idle",
+    "objects": [
+      {
+        "name": "cup_1",
+        "kind": "cup",
+        "state": "clean",
+        "location": "right_side"
+      },
+      {
+        "name": "fork_2",
+        "kind": "fork",
+        "state": "dirty",
+        "location": "center"
+      },
+      {
+        "name": "plate_3",
+        "kind": "plate",
+        "state": "clean",
+        "location": "left_side"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "left_counter",
+    "last_action_result": "cleanup_started"
+  },
+  "allowed_actions": [
+    "wait",
+    "start_task",
+    "pick",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "pick",
+    "target_object": "fork_2",
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers clean dishes on the left counter; fork_2 is dirty and located in center.",
+    "memory_used": [
+      "User prefers clean dishes on left counter"
+    ],
+    "confidence": 0.95,
+    "raw_model_output": "{\n  \"action_type\": \"pick\",\n  \"target_object\": \"fork_2\",\n  \"target_surface\": null,\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"User prefers clean dishes on the left counter; fork_2 is dirty and located in center.\",\n  \"memory_used\": [\"User prefers clean dishes on left counter\"],\n  \"confidence\": 0.95\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes placed on the left side of the counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes on the left counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Move slower when picking up mugs or cups.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes on the left counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "pick",
+    "target_object": "fork_2",
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers clean dishes on the left counter; fork_2 is dirty and located in center.",
+    "memory_used": [
+      "User prefers clean dishes on left counter"
+    ],
+    "confidence": 0.95,
+    "raw_model_output": "{\"action_type\": \"pick\", \"target_object\": \"fork_2\", \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"User prefers clean dishes on the left counter; fork_2 is dirty and located in center.\", \"memory_used\": [\"User prefers clean dishes on left counter\"], \"confidence\": 0.95}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Picked fork_2.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "dish_cleanup",
+      "user_state": "finished_eating",
+      "robot_state": "holding_item",
+      "objects": [
+        {
+          "name": "cup_1",
+          "kind": "cup",
+          "state": "clean",
+          "location": "right_side"
+        },
+        {
+          "name": "fork_2",
+          "kind": "fork",
+          "state": "dirty",
+          "location": "gripper"
+        },
+        {
+          "name": "plate_3",
+          "kind": "plate",
+          "state": "clean",
+          "location": "left_side"
+        }
+      ],
+      "surfaces": [
+        {
+          "name": "left_counter",
+          "state": "available"
+        },
+        {
+          "name": "right_counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        },
+        {
+          "name": "drying_rack",
+          "state": "available"
+        }
+      ],
+      "held_object": "fork_2",
+      "placement_preference_surface": "left_counter",
+      "last_action_result": "picked_successfully"
+    }
+  },
+  "evaluation": {
+    "scenario_id": "dish_cleanup_0004",
+    "template_name": "dish_cleanup",
+    "action_type": "pick",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 1.0,
+    "memory_alignment_score": 0.5,
+    "total_score": 0.95,
+    "notes": []
+  },
+  "agent_result": "Calling tools:\n[{'id': '775549557', 'type': 'function', 'function': {'name': 'inspect_kitchen_scene', 'arguments': {}}}]",
+  "agent_error": null,
+  "decision_time_sec": 0.5046212000015657,
+  "agent_time_sec": 1.8845499000017298
+}

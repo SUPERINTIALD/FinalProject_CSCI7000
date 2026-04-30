@@ -1,5 +1,4 @@
 # FinalProject_CSCI7000
-# FinalProject_CSCI7000
 
 ## Main project: Qwen 3.5 local planner
 
@@ -80,3 +79,18 @@ lerobot-eval \
   --eval.batch_size=1 \
   --output_dir="/mnt/d/Yuri/CU BOULDER/Masters/Sem 2/CSCI 7000/FinalProject_CSCI7000/Libero_Results/libero_smoke"
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+Running scripts:
+python .\benchmark_vlm_models.py --annotations .\data\vlm_annotations.csv --use-memory --models qwen2.5-vl-3b-instruct

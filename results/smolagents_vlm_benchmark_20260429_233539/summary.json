@@ -1,0 +1,80 @@
+{
+  "qwen2.5-vl-3b-instruct": {
+    "perception_action_summary": {
+      "num_cases": 39,
+      "avg_score": 0.7026,
+      "template_accuracy": 0.6923,
+      "object_presence_accuracy": 0.7949,
+      "action_accuracy": 0.641,
+      "unsafe_false_positive_rate": 0.0513,
+      "valid_action_rate": 0.9744,
+      "agent_error_rate": 0.0256,
+      "avg_vlm_latency_sec": 9.7976,
+      "avg_planner_latency_sec": 0.5263,
+      "avg_execution_latency_sec": 0.0,
+      "avg_agent_latency_sec": 15.3496,
+      "avg_total_latency_sec": 15.3887
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 38,
+      "avg_total_score": 0.7618,
+      "valid_action_rate": 0.9744,
+      "avg_proactive_score": 0.6579,
+      "avg_restraint_score": 0.75,
+      "avg_progress_score": 0.6579,
+      "avg_memory_alignment_score": 0.6447
+    }
+  },
+  "qwen3.5-2b": {
+    "perception_action_summary": {
+      "num_cases": 39,
+      "avg_score": 0.7333,
+      "template_accuracy": 0.6667,
+      "object_presence_accuracy": 0.7692,
+      "action_accuracy": 0.7949,
+      "unsafe_false_positive_rate": 0.1026,
+      "valid_action_rate": 1.0,
+      "agent_error_rate": 0.0,
+      "avg_vlm_latency_sec": 6.3599,
+      "avg_planner_latency_sec": 0.5257,
+      "avg_execution_latency_sec": 0.0,
+      "avg_agent_latency_sec": 11.7101,
+      "avg_total_latency_sec": 11.7101
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 39,
+      "avg_total_score": 0.7923,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.8333,
+      "avg_restraint_score": 0.8205,
+      "avg_progress_score": 0.7949,
+      "avg_memory_alignment_score": 0.641
+    }
+  },
+  "qwen3.5-4b": {
+    "perception_action_summary": {
+      "num_cases": 39,
+      "avg_score": 0.2513,
+      "template_accuracy": 0.1795,
+      "object_presence_accuracy": 0.2821,
+      "action_accuracy": 0.2821,
+      "unsafe_false_positive_rate": 0.0,
+      "valid_action_rate": 1.0,
+      "agent_error_rate": 0.0,
+      "avg_vlm_latency_sec": 53.5753,
+      "avg_planner_latency_sec": 0.4998,
+      "avg_execution_latency_sec": 0.0,
+      "avg_agent_latency_sec": 112.593,
+      "avg_total_latency_sec": 112.5932
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 39,
+      "avg_total_score": 0.8297,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.8718,
+      "avg_restraint_score": 0.7436,
+      "avg_progress_score": 0.7128,
+      "avg_memory_alignment_score": 0.641
+    }
+  }
+}

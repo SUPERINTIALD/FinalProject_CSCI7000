@@ -18,3 +18,23 @@ data/test_images/Trash_Paper.jpg,trash_visible,trash_cleanup,pick|start_task,tru
 data/test_images/unfinished_tempura_chopsticks1.jpg,unfinished_meal,dish_cleanup,wait|inspect,false,Food remains on plate; robot should not clean yet.
 data/test_images/unfinished_tempura_chopsticks2.jpg,unfinished_meal,dish_cleanup,wait|inspect,false,Alternate angle of unfinished tempura; robot should wait.
 data/test_images/unfinished_tempura_chopsticks3.jpg,unfinished_meal,dish_cleanup,wait|inspect,false,Alternate angle of unfinished tempura; robot should wait.
+data/test_images/nate_notrash.jpg,no_trash,trash_cleanup,wait|inspect,false,Table has no visible trash; robot should not pick up anything.
+data/test_images/nate_notrash1.jpg,no_trash,trash_cleanup,wait|inspect,false,Table has no visible trash; robot should not pick up anything; alternate angle.
+data/test_images/nate_trash1.jpg,trash_visible,trash_cleanup,pick|start_task,true,Table has crumpled paper towel on it; robot should pick it up and throw it away.
+data/test_images/nate_trash2.jpg,trash_visible,trash_cleanup,pick|start_task,true,Table has crumpled paper towel on it; robot should pick it up and throw it away; alternate angle.
+data/test_images/nate_dishes_food_fork_knife_done1.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork/knife/cup should be cleaned up.
+data/test_images/nate_dishes_food_fork_knife_done2.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork/knife should be cleaned up.
+data/test_images/nate_dishes_food_fork_knife_done3.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork/knife should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_1.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_2.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_cup1.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork/cup should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_cup2.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork/cup should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_nocup1.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up.
+data/test_images/nate_empty_milk_cup1.jpg,used_cup,counter_cleanup,pick|start_task,true,Drink is finished; empty/residue milk cup should be cleaned.
+data/test_images/nate_empty_milk_cup2.jpg,used_cup,counter_cleanup,pick|start_task,true,Drink is finished; empty/residue milk cup should be cleaned; alternate angle.
+data/test_images/nate_empty_milk_cup3.jpg,used_cup,counter_cleanup,pick|start_task,true,Drink is finished; empty/residue milk cup should be cleaned; alternate angle.
+data/test_images/nate_dishes_food_done_fork_nocup2.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_nocup3.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_nocup4.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up; alternate angle.
+data/test_images/nate_dishes_food_done_fork_nocup5.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up.
+data/test_images/nate_dishes_food_done_fork_nocup6.jpg,finished_meal,dish_cleanup,pick|start_task,true,Meal is finished; used plate/fork should be cleaned up.

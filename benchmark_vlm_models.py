@@ -67,6 +67,60 @@ class BenchmarkRow:
     semantic_action: dict[str, Any]
     planner_eval: dict[str, Any]
 
+
+def apply_safety_gate(
+    scene_state: dict[str, Any],
+    semantic_action_dict: dict[str, Any],
+) -> dict[str, Any]:
+    """
+    Conservative guardrail for proactive household behavior.
+    Prevents picking when the VLM indicates the object may still be in use.
+    """
+    action_type = semantic_action_dict.get("action_type")
+    target_object = semantic_action_dict.get("target_object")
+
+    if action_type not in {"pick", "start_task"}:
+        return semantic_action_dict
+
+    objects = scene_state.get("objects", [])
+
+    target = None
+    for obj in objects:
+        if obj.get("name") == target_object:
+            target = obj
+            break
+
+    # If there is no clear target, do not act.
+    if target_object and target is None:
+        semantic_action_dict["action_type"] = "inspect"
+        semantic_action_dict["target_object"] = None
+        semantic_action_dict["target_surface"] = None
+        semantic_action_dict["reason"] = "Safety gate: target object was not clearly grounded in the scene."
+        return semantic_action_dict
+
+    # Filled cups / plates / bowls should not be picked.
+    for obj in objects:
+        kind = str(obj.get("kind", "")).lower()
+        state = str(obj.get("state", "")).lower()
+
+        if kind in {"cup", "glass", "mug", "plate", "bowl"} and state == "filled":
+            semantic_action_dict["action_type"] = "wait"
+            semantic_action_dict["target_object"] = None
+            semantic_action_dict["target_surface"] = None
+            semantic_action_dict["reason"] = "Safety gate: food or drink appears unfinished, so the robot should wait."
+            return semantic_action_dict
+
+    # If user/scene state says still eating, do not pick.
+    if scene_state.get("user_state") in {"still_eating", "using_counter", "using_kitchen"}:
+        semantic_action_dict["action_type"] = "wait"
+        semantic_action_dict["target_object"] = None
+        semantic_action_dict["target_surface"] = None
+        semantic_action_dict["reason"] = "Safety gate: user may still be using the item."
+        return semantic_action_dict
+    print("[safety gate input]", semantic_action_dict)
+    print("[safety gate scene]", scene_state)
+    return semantic_action_dict
+
 def seed_memory(memory: JsonMemory) -> None:
     try:
         memory.upsert("preference", "User prefers clean dishes on the left counter.", {"task": "dish_cleanup"})
@@ -244,6 +298,16 @@ def benchmark_one_model(
             }
             semantic_action = parser_obj.parse(
                 raw_text=json.dumps(safe_action_for_parse),
+                scene_state=scene_state,
+            )
+
+            safe_semantic_action_dict = apply_safety_gate(
+                scene_state=scene_state,
+                semantic_action_dict=semantic_action.to_dict(),
+            )
+
+            semantic_action = parser_obj.parse(
+                raw_text=json.dumps(safe_semantic_action_dict),
                 scene_state=scene_state,
             )
             evaluation_hints = build_evaluation_hints(case, scene_state)

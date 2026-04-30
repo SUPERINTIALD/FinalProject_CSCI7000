@@ -1,0 +1,165 @@
+{
+  "scenario_id": "dish_cleanup_0020",
+  "template_name": "dish_cleanup",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "dish_cleanup",
+    "user_state": "finished_eating",
+    "robot_state": "holding_item",
+    "objects": [
+      {
+        "name": "plate_1",
+        "kind": "plate",
+        "state": "dirty",
+        "location": "right_side"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": "plate_1",
+    "placement_preference_surface": "left_counter",
+    "last_action_result": "cleanup_started"
+  },
+  "allowed_actions": [
+    "place",
+    "wait",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "place",
+    "target_object": null,
+    "target_surface": "left_counter",
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers clean dishes on the left counter; plate_1 is dirty and needs to be placed there.",
+    "memory_used": [
+      "User preference: clean dishes on left counter"
+    ],
+    "confidence": 0.95,
+    "raw_model_output": "{\n  \"action_type\": \"place\",\n  \"target_object\": null,\n  \"target_surface\": \"left_counter\",\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"User prefers clean dishes on the left counter; plate_1 is dirty and needs to be placed there.\",\n  \"memory_used\": [\"User preference: clean dishes on left counter\"],\n  \"confidence\": 0.95\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes placed on the left side of the counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes on the left counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes on the left counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes on the left counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "strategy",
+        "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "place",
+    "target_object": null,
+    "target_surface": "left_counter",
+    "target_zone": null,
+    "parameters": {},
+    "reason": "User prefers clean dishes on the left counter; plate_1 is dirty and needs to be placed there.",
+    "memory_used": [
+      "User preference: clean dishes on left counter"
+    ],
+    "confidence": 0.95,
+    "raw_model_output": "{\"action_type\": \"place\", \"target_object\": null, \"target_surface\": \"left_counter\", \"target_zone\": null, \"parameters\": {}, \"reason\": \"User prefers clean dishes on the left counter; plate_1 is dirty and needs to be placed there.\", \"memory_used\": [\"User preference: clean dishes on left counter\"], \"confidence\": 0.95}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Placed plate_1 on/in left_counter.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "dish_cleanup",
+      "user_state": "finished_eating",
+      "robot_state": "active",
+      "objects": [
+        {
+          "name": "plate_1",
+          "kind": "plate",
+          "state": "placed",
+          "location": "left_counter"
+        }
+      ],
+      "surfaces": [
+        {
+          "name": "left_counter",
+          "state": "available"
+        },
+        {
+          "name": "right_counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        },
+        {
+          "name": "drying_rack",
+          "state": "available"
+        }
+      ],
+      "held_object": null,
+      "placement_preference_surface": "left_counter",
+      "last_action_result": "placed_successfully"
+    }
+  },
+  "evaluation": {
+    "scenario_id": "dish_cleanup_0020",
+    "template_name": "dish_cleanup",
+    "action_type": "place",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 1.0,
+    "memory_alignment_score": 1.0,
+    "total_score": 1.0,
+    "notes": []
+  },
+  "agent_result": "Calling tools:\n[{'id': '754651846', 'type': 'function', 'function': {'name': 'inspect_kitchen_scene', 'arguments': {}}}]",
+  "agent_error": null,
+  "decision_time_sec": 0.47804940000060014,
+  "agent_time_sec": 1.834314899999299
+}

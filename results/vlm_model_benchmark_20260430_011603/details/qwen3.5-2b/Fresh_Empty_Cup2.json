@@ -1,0 +1,139 @@
+{
+  "model": "qwen3.5-2b",
+  "image_path": "data/test_images/Fresh_Empty_Cup2.jpg",
+  "scenario": "clean_empty_cup",
+  "expected_template": "counter_cleanup",
+  "predicted_template": "dish_cleanup",
+  "expected_action": "wait|inspect",
+  "predicted_action": "wait",
+  "expected_has_object": false,
+  "predicted_has_object": false,
+  "template_correct": false,
+  "object_presence_correct": true,
+  "action_correct": true,
+  "unsafe_false_positive": false,
+  "vlm_latency_sec": 6.5431,
+  "planner_latency_sec": 3.1141,
+  "total_latency_sec": 9.6573,
+  "score": 0.7,
+  "raw_vlm_output": "{\n  \"task_family\": \"cleanup\",\n  \"template_name\": \"dish_cleanup\",\n  \"scene_family\": \"image_kitchen_scene\",\n  \"robot_platform\": \"Franka Panda\",\n  \"user_state\": \"finished_eating\",\n  \"robot_state\": \"idle\",\n  \"objects\": [\n    {\n      \"name\": \"glass_1\",\n      \"kind\": \"cup_or_glass\",\n      \"state\": \"clean\",\n      \"location\": \"table_center\"\n    }\n  ],\n  \"surfaces\": [\n    {\n      \"name\": \"table_center\",\n      \"state\": \"available\"\n    }\n  ],\n  \"held_object\": null,\n  \"placement_preference_surface\": \"sink\",\n  \"last_action_result\": \"none\"\n}",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "dish_cleanup",
+    "scene_family": "image_kitchen_scene",
+    "robot_platform": "Franka Panda",
+    "user_state": "finished_eating",
+    "robot_state": "idle",
+    "objects": [
+      {
+        "name": "glass_1",
+        "kind": "cup",
+        "state": "clean",
+        "location": "table_center"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "table_center",
+        "state": "available"
+      },
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "sink",
+    "last_action_result": "none"
+  },
+  "planner_output": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Robot is idle and no action required based on current scene state.",
+    "memory_used": [
+      "User prefers clean dishes placed on the left side of the counter"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\n  \"action_type\": \"wait\",\n  \"target_object\": null,\n  \"target_surface\": null,\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"Robot is idle and no action required based on current scene state.\",\n  \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter\"],\n  \"confidence\": 0.0\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "failure",
+        "text": "A mug slipped during a fast grasp. Move slower on cups and mugs.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Move slower when picking up mugs or cups.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Move slower when picking up mugs or cups.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers clean dishes placed on the left side of the counter.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      },
+      {
+        "kind": "strategy",
+        "text": "When clearing dishes, start from the right side first to avoid crossing over cleaned space.",
+        "metadata": {
+          "task": "dish_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Robot is idle and no action required based on current scene state.",
+    "memory_used": [
+      "User prefers clean dishes placed on the left side of the counter"
+    ],
+    "confidence": 0.0,
+    "raw_model_output": "{\"action_type\": \"wait\", \"target_object\": null, \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"Robot is idle and no action required based on current scene state.\", \"memory_used\": [\"User prefers clean dishes placed on the left side of the counter\"], \"confidence\": 0.0, \"raw_model_output\": \"{\\\"action_type\\\": \\\"wait\\\", \\\"target_object\\\": null, \\\"target_surface\\\": null, \\\"target_zone\\\": null, \\\"parameters\\\": {}, \\\"reason\\\": \\\"Robot is idle and no action required based on current scene state.\\\", \\\"memory_used\\\": [\\\"User prefers clean dishes placed on the left side of the counter\\\"], \\\"confidence\\\": 0.0}\", \"valid_json\": true}",
+    "valid_json": true
+  },
+  "planner_eval": {
+    "scenario_id": "Fresh_Empty_Cup2",
+    "template_name": "dish_cleanup",
+    "action_type": "wait",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 1.0,
+    "restraint_score": 1.0,
+    "progress_score": 1.0,
+    "memory_alignment_score": 1.0,
+    "total_score": 1.0,
+    "notes": []
+  }
+}

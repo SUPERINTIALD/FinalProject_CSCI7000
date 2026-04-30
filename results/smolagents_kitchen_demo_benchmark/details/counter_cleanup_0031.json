@@ -1,0 +1,206 @@
+{
+  "scenario_id": "counter_cleanup_0031",
+  "template_name": "counter_cleanup",
+  "scene_state": {
+    "task_family": "cleanup",
+    "template_name": "counter_cleanup",
+    "scene_family": "libero_style_kitchen",
+    "robot_platform": "Franka Panda",
+    "user_state": "left_area",
+    "robot_state": "idle",
+    "objects": [
+      {
+        "name": "fork_1",
+        "kind": "fork",
+        "state": "used",
+        "location": "right_counter"
+      },
+      {
+        "name": "plate_2",
+        "kind": "plate",
+        "state": "used",
+        "location": "right_counter"
+      },
+      {
+        "name": "fork_3",
+        "kind": "fork",
+        "state": "used",
+        "location": "table_edge"
+      },
+      {
+        "name": "cup_4",
+        "kind": "cup",
+        "state": "clean",
+        "location": "table_edge"
+      }
+    ],
+    "surfaces": [
+      {
+        "name": "left_counter",
+        "state": "available"
+      },
+      {
+        "name": "right_counter",
+        "state": "available"
+      },
+      {
+        "name": "sink",
+        "state": "available"
+      },
+      {
+        "name": "drying_rack",
+        "state": "available"
+      }
+    ],
+    "held_object": null,
+    "placement_preference_surface": "sink",
+    "last_action_result": "place_failed"
+  },
+  "allowed_actions": [
+    "wait",
+    "start_task",
+    "pick",
+    "inspect"
+  ],
+  "planner_output": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Model selected unknown target_surface: table_edge",
+    "memory_used": [],
+    "confidence": 0.0,
+    "raw_model_output": "{\n  \"action_type\": \"pick\",\n  \"target_object\": \"cup_4\",\n  \"target_surface\": \"table_edge\",\n  \"target_zone\": null,\n  \"parameters\": {},\n  \"reason\": \"User prefers used cups in sink; cup_4 is dirty and located on table edge where user is left.\",\n  \"memory_used\": [\"User preference for used cups in sink\"],\n  \"confidence\": 0.95\n}",
+    "used_memory": true,
+    "retrieved_memory": [
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "preference",
+        "text": "User prefers used cups and utensils placed in the sink.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Cups can slip if moved too quickly.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      },
+      {
+        "kind": "failure",
+        "text": "Cups can slip if moved too quickly.",
+        "metadata": {
+          "task": "counter_cleanup"
+        }
+      }
+    ]
+  },
+  "semantic_action": {
+    "action_type": "wait",
+    "target_object": null,
+    "target_surface": null,
+    "target_zone": null,
+    "parameters": {},
+    "reason": "Model selected unknown target_surface: table_edge",
+    "memory_used": [],
+    "confidence": 0.0,
+    "raw_model_output": "{\"action_type\": \"wait\", \"target_object\": null, \"target_surface\": null, \"target_zone\": null, \"parameters\": {}, \"reason\": \"Model selected unknown target_surface: table_edge\", \"memory_used\": [], \"confidence\": 0.0}",
+    "valid_json": true
+  },
+  "sim_result": {
+    "success": true,
+    "message": "Robot waited.",
+    "updated_scene_state": {
+      "task_family": "cleanup",
+      "template_name": "counter_cleanup",
+      "scene_family": "libero_style_kitchen",
+      "robot_platform": "Franka Panda",
+      "user_state": "left_area",
+      "robot_state": "idle",
+      "objects": [
+        {
+          "name": "fork_1",
+          "kind": "fork",
+          "state": "used",
+          "location": "right_counter"
+        },
+        {
+          "name": "plate_2",
+          "kind": "plate",
+          "state": "used",
+          "location": "right_counter"
+        },
+        {
+          "name": "fork_3",
+          "kind": "fork",
+          "state": "used",
+          "location": "table_edge"
+        },
+        {
+          "name": "cup_4",
+          "kind": "cup",
+          "state": "clean",
+          "location": "table_edge"
+        }
+      ],
+      "surfaces": [
+        {
+          "name": "left_counter",
+          "state": "available"
+        },
+        {
+          "name": "right_counter",
+          "state": "available"
+        },
+        {
+          "name": "sink",
+          "state": "available"
+        },
+        {
+          "name": "drying_rack",
+          "state": "available"
+        }
+      ],
+      "held_object": null,
+      "placement_preference_surface": "sink",
+      "last_action_result": "waited"
+    }
+  },
+  "evaluation": {
+    "scenario_id": "counter_cleanup_0031",
+    "template_name": "counter_cleanup",
+    "action_type": "wait",
+    "valid_action_type": true,
+    "valid_target": true,
+    "proactive_score": 0.0,
+    "restraint_score": 0.5,
+    "progress_score": 0.0,
+    "memory_alignment_score": 0.0,
+    "total_score": 0.4,
+    "notes": [
+      "robot should have acted proactively but chose wait",
+      "action does not move task in the preferred direction",
+      "memory was relevant but not reflected in action"
+    ]
+  },
+  "agent_result": "Calling tools:\n[{'id': '829624750', 'type': 'function', 'function': {'name': 'inspect_kitchen_scene', 'arguments': {}}}]",
+  "agent_error": null,
+  "decision_time_sec": 0.5749734999990324,
+  "agent_time_sec": 2.013517100000172
+}
