@@ -1,0 +1,68 @@
+{
+  "qwen2.5-vl-3b-instruct": {
+    "perception_action_summary": {
+      "num_cases": 39,
+      "avg_score": 0.7128,
+      "template_accuracy": 0.6923,
+      "object_presence_accuracy": 0.7949,
+      "action_accuracy": 0.6667,
+      "unsafe_false_positive_rate": 0.0513,
+      "avg_vlm_latency_sec": 10.0772,
+      "avg_planner_latency_sec": 3.3028,
+      "avg_total_latency_sec": 13.3803
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 39,
+      "avg_total_score": 0.759,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.6667,
+      "avg_restraint_score": 0.7564,
+      "avg_progress_score": 0.6667,
+      "avg_memory_alignment_score": 0.641
+    }
+  },
+  "qwen3.5-2b": {
+    "perception_action_summary": {
+      "num_cases": 39,
+      "avg_score": 0.7333,
+      "template_accuracy": 0.6667,
+      "object_presence_accuracy": 0.7692,
+      "action_accuracy": 0.7949,
+      "unsafe_false_positive_rate": 0.1026,
+      "avg_vlm_latency_sec": 6.7662,
+      "avg_planner_latency_sec": 3.3177,
+      "avg_total_latency_sec": 10.0841
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 39,
+      "avg_total_score": 0.8077,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.8333,
+      "avg_restraint_score": 0.8205,
+      "avg_progress_score": 0.7949,
+      "avg_memory_alignment_score": 0.641
+    }
+  },
+  "qwen3.5-4b": {
+    "perception_action_summary": {
+      "num_cases": 39,
+      "avg_score": 0.2513,
+      "template_accuracy": 0.1795,
+      "object_presence_accuracy": 0.2821,
+      "action_accuracy": 0.2821,
+      "unsafe_false_positive_rate": 0.0,
+      "avg_vlm_latency_sec": 53.2404,
+      "avg_planner_latency_sec": 3.1842,
+      "avg_total_latency_sec": 56.4248
+    },
+    "planner_evaluator_summary": {
+      "num_scenarios": 39,
+      "avg_total_score": 0.8221,
+      "valid_action_rate": 1.0,
+      "avg_proactive_score": 0.859,
+      "avg_restraint_score": 0.7179,
+      "avg_progress_score": 0.7128,
+      "avg_memory_alignment_score": 0.641
+    }
+  }
+}
