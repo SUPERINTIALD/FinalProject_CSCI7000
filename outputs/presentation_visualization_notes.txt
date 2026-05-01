@@ -1,0 +1,16 @@
+Suggested presentation visualizations:
+1. Planner / agent progression over versions (V1 -> V7) using avg_total_score.
+2. Key metric profile comparison for V3_without_memory, V3_with_memory, V4, LoRA_full, and PhaseE_smolagents_kitchen.
+3. Per-task comparison for counter_cleanup, dish_cleanup, and trash_cleanup.
+4. Direct VLM comparison using avg_score, action_accuracy, unsafe false positives, and total latency.
+5. SmolAgents VLM comparison using avg_score, planner avg_total_score, agent latency, and unsafe FP vs action accuracy tradeoff.
+Recommended for slides:
+- Definitely include:
+* 01_planner_progression_avg_total_score.png
+* 03_smolagents_task_avg_total_score.png
+* 05_latest_direct_vlm_avg_score.png
+* 08_smolagents_tradeoff_accuracy_vs_unsafe_fp.png
+* 09_smolagents_agent_loop_time.png
+- Optional backup slide:
+* 04_memory_alignment_task_comparison.png
+* 10_smolagents_planner_avg_total_score.png
